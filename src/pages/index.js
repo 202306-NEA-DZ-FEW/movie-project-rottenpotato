@@ -1,7 +1,6 @@
 import React from "react"
 
-export default function Home({ moviesData }) {
-  console.log(moviesData)
+export default function Home({}) {
   return (
     <div className="bg-black">
       <main
@@ -15,9 +14,9 @@ export default function Home({ moviesData }) {
   )
 }
 
-export async function getServerSideProps() {
-  const moviesData = await fetcher("person/popular")
-  return {
-    props: { moviesData },
-  }
-}
+// export async function getServerSideProps() {
+//   const moviesData = await fetcher("person/popular")
+//   return {
+//     props: { moviesData },
+//   }
+// }
