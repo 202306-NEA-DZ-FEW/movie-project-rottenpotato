@@ -10,7 +10,6 @@ export default async function fetcher(url) {
   }
   try {
     const res = await axios.get(base + url, options)
-    console.log(res)
     return res.data
   } catch (err) {
     console.log(err)
