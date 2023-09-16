@@ -5,7 +5,7 @@ import logo from "../images/logo.svg"
 import Dropdown from "./DropDown/Dropdown"
 const NavBar = () => {
   return (
-    <nav className="bg-black p-4  ">
+    <nav className="bg-black p-4  h-40 fixed top-0 left-0 z-10 w-full">
       <div className=" my-10 flex w-full justify-between align-baseline">
         <div className="logo flex ml-12">
           <Image src={logo} width={59} height={59} alt="logo image" />

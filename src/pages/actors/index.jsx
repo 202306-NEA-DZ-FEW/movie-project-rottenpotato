@@ -5,7 +5,7 @@ import ActorCard from "@/components/ActorCard/ActorCard"
 function Actors({ peopleData }) {
   console.log(peopleData)
   return (
-    <main className="bg-slate-300 flex flex-col md:flex-row flex-wrap items-center justify-around gap-5 ">
+    <main className="bg-black w-full p-8 pl-40 pt-48  flex flex-col md:flex-row flex-wrap items-center justify-around gap-8 ">
       {peopleData.results.map((person) => (
         <ActorCard key={person.id} person={person} />
       ))}
