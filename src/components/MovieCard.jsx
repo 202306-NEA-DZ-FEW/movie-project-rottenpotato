@@ -1,7 +1,7 @@
 const MovieCard = ({ title, poster_path, vote_average }) => {
   const posterImageUrl = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
-    : "@/images/default_Rotten_potato.svg"
+    : "../images/default_Rotten_potato.jpg"
 
   //Calculating the number of stars based on voting average, then rendering them.
   const numStars = Math.round(vote_average / 2)
@@ -30,6 +30,7 @@ const MovieCard = ({ title, poster_path, vote_average }) => {
     // Card with the poster image as its background
     <div className="rounded-xl overflow-hidden shadow-lg w-48 h-72 flex-shrink-0 m-1/4 mr-2 ml-2 mb-2 mt-2 relative">
       <div className="relative w-full h-full">
+        <img src="../images/default_Rotten_potato.jpg" alt="" />
         <div
           className="absolute top-0 left-0 w-full h-full bg-contain bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${posterImageUrl}')` }}
