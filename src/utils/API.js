@@ -28,3 +28,12 @@ export default async function fetcher(url) {
   // // const json = await res.json()
   // return res.data
 }
+
+export const fetchMovieGenres = async () => {
+  const data = await fetcher("genre/movie/list?language=en")
+  return data
+}
+export const fetchTvGenres = async () => {
+  const data = await fetcher("genre/tv/list?language=en")
+  return data
+}

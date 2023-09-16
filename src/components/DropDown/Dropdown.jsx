@@ -1,6 +1,8 @@
+import Link from "next/link"
+import { stringify } from "postcss"
 import React, { useEffect, useRef, useState } from "react"
 
-export default function Dropdown({ title }) {
+export default function Dropdown({ title, data, page }) {
   const [showDropdown, setShowDropdown] = useState(false)
   const dropdown = useRef(null)
   const buttonRef = useRef(null)
@@ -59,38 +61,20 @@ export default function Dropdown({ title }) {
           className="py-2 text-sm z-10 text-gray-100 bg-black dark:text-gray-200"
           aria-labelledby="dropdownDefaultButton"
         >
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-YellowPotato hover:text-black   dark:hover:text-white"
-            >
-              Top Rated
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Up coming
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Trending
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            >
-              Most watched
-            </a>
-          </li>
+          {data &&
+            data.map((item) => {
+              const link = item.link ? item.link : item.name
+              return (
+                <li key={item.id}>
+                  <Link
+                    href={page + link}
+                    className="block px-4 py-2 hover:bg-YellowPotato hover:text-black   dark:hover:text-white"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              )
+            })}
         </ul>
       </div>
     </div>
