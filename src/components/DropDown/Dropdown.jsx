@@ -28,7 +28,7 @@ export default function Dropdown({ title }) {
       <button
         ref={buttonRef}
         onClick={() => setShowDropdown((showDropdown) => !showDropdown)}
-        className="t focus:outline-none focus:ring-blue-300 font-medium rounded-lg   py-2 text-center inline-flex items-center"
+        className="t focus:outline-none text-white focus:ring-blue-300 font-medium rounded-lg   py-2 text-center inline-flex items-center"
         type="button"
       >
         {title}{" "}
@@ -56,13 +56,13 @@ export default function Dropdown({ title }) {
         } "z-10  absolute divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"`}
       >
         <ul
-          className="py-2 text-sm text-gray-700 dark:text-gray-200"
+          className="py-2 text-sm z-10 text-gray-100 bg-black dark:text-gray-200"
           aria-labelledby="dropdownDefaultButton"
         >
           <li>
             <a
               href="#"
-              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              className="block px-4 py-2 hover:bg-YellowPotato hover:text-black   dark:hover:text-white"
             >
               Top Rated
             </a>
