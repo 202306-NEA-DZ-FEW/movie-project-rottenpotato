@@ -29,7 +29,7 @@ module.exports = {
         LightGray: "rgba(249, 249, 249, 0.2)",
       },
       fontFamily: {
-        lucky: ["Luckiest Guy", "sans-serif"],
+        lucky: ["Luckiest Guy", "cursive"],
         lato: ["Lato", "sans-serif"],
         opensans: ["Open Sans", "sans-serif"],
       },
