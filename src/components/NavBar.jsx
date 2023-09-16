@@ -1,9 +1,21 @@
+import fetcher, { fetchMovieGenres, fetchTvGenres } from "@/utils/API"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 import logo from "../images/logo.svg"
 import Dropdown from "./DropDown/Dropdown"
+import { movieLibrary } from "@/utils/static"
 const NavBar = () => {
+  const [movieGenres, setMovieGenres] = useState([])
+  const [tvGenres, setTvGenres] = useState([])
+  useEffect(() => {
+    fetchMovieGenres().then((res) => setMovieGenres(res.genres))
+    fetchTvGenres().then((res) => setTvGenres(res.genres))
+    fetcher("movie/upcoming?language=en-US").then((res) =>
+      console.log("resssss", res),
+    )
+  }, [])
   return (
     <nav className="bg-black p-4  ">
       <div className=" my-10 flex w-full justify-between align-baseline">
@@ -18,9 +30,9 @@ const NavBar = () => {
           <Link href="/" passHref className="py-2">
             Home
           </Link>
-          <Dropdown title={"Movies"} />
-          <Dropdown title={"Genre"} />
-          <Dropdown title={"TVShows"} />
+          <Dropdown title={"Movies"} data={movieLibrary} page={"movies/"} />
+          <Dropdown title={"Genre"} data={movieGenres} page={"movies/"} />
+          <Dropdown title={"TvShows"} data={tvGenres} page={"shows/"} />
           <Link href="/actors" passHref className="py-2">
             Actors
           </Link>

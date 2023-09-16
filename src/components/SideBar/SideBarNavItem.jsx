@@ -3,7 +3,7 @@ import React from "react"
 
 export default function SideBarNavItem({
   id,
-  title,
+  name,
   icon: NavItemIcon,
   link,
   currentLink,
@@ -23,7 +23,7 @@ export default function SideBarNavItem({
             !isFull ? "scale-0" : "scale-100"
           }`}
         >
-          {title}
+          {name}
         </label>
       </div>
     </li>
@@ -36,7 +36,7 @@ export default function SideBarNavItem({
             !isFull ? "scale-0" : "scale-100"
           }`}
         >
-          {title}
+          {name}
         </label>
       </div>
     </li>

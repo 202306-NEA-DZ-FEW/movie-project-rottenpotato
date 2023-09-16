@@ -1,38 +1,36 @@
-import Image from "next/image"
-import Link from "next/link"
 import React, { useState } from "react"
 
-import logo from "../../images/logo.svg"
 import { AiOutlineHome } from "react-icons/ai"
-import { GoVerified } from "react-icons/go"
-import { RiCompassDiscoverLine } from "react-icons/ri"
-import { PiTrophy } from "react-icons/pi"
+import { PiVideoCameraBold } from "react-icons/pi"
+import { FaRegBuilding } from "react-icons/fa"
+import { IoPersonOutline } from "react-icons/io5"
 import SideBarNavItem from "./SideBarNavItem"
+import { movieLibrary } from "@/utils/static"
 
 const menuNavigationList = [
   {
     id: "home",
-    title: "Home",
+    name: "Home",
     icon: AiOutlineHome,
     link: "/home",
   },
   {
-    id: "explore",
-    title: "Explore",
-    icon: RiCompassDiscoverLine,
-    link: "/explore",
+    id: "actors",
+    name: "Actors",
+    icon: IoPersonOutline,
+    link: "/actors",
   },
   {
-    id: "awards",
-    title: "Awards",
-    icon: PiTrophy,
-    link: "/awards",
+    id: "studios",
+    name: "Studios",
+    icon: FaRegBuilding,
+    link: "/studios",
   },
   {
-    id: "celebrities",
-    title: "Celebrities",
-    icon: GoVerified,
-    link: "/celebrities",
+    id: "movie providers",
+    name: "Movie Providers",
+    icon: PiVideoCameraBold,
+    link: "/providers",
   },
 ]
 export default function SideBar({ fullSideBar }) {
@@ -90,11 +88,11 @@ export default function SideBar({ fullSideBar }) {
               Library
             </h3>
             <ul className="flex flex-col gap-1">
-              {menuNavigationList.slice(0, 2).map((navItem) => (
+              {movieLibrary.map((navItem) => (
                 <SideBarNavItem
                   {...navItem}
                   key={navItem.id}
-                  currentLink={"currentLink"}
+                  currentLink={currentLink}
                   setCurrentLink={setCurrentLink}
                   isFull={isFull}
                 />
@@ -102,7 +100,7 @@ export default function SideBar({ fullSideBar }) {
             </ul>
           </div>
           {/* Settings section */}
-          <div className="nav-items mt-14">
+          {/* <div className="nav-items mt-14">
             <h3
               className={`${
                 !isFull ? "invisible" : ""
@@ -121,7 +119,7 @@ export default function SideBar({ fullSideBar }) {
                 />
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
