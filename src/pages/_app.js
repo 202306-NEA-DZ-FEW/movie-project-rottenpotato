@@ -12,7 +12,10 @@ function MyApp({ Component, pageProps }) {
     <div className="bg-black h-fit text-white">
       <NavBar />
       <div className=" flex flex-row-reverse justify-between bg-black">
-        <Component {...pageProps} />
+        <div className="w-full ml-12">
+          <Component {...pageProps} />
+        </div>
+
         <SideBar fullSideBar={fullSideBar} />
       </div>
     </div>
