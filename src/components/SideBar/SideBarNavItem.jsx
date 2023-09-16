@@ -8,27 +8,36 @@ export default function SideBarNavItem({
   link,
   currentLink,
   setCurrentLink,
+  isFull,
 }) {
   return id === currentLink ? (
     <li
       id={id}
-      className="border-r-2 py-2 border-r-yellow-400 cursor-pointer"
+      className="border-r-2  border-r-yellow-400 cursor-pointer"
       onClick={() => setCurrentLink(id)}
     >
-      <div href={link} className="flex ">
-        <NavItemIcon className="w-6 h-6 mr-4 text-yellow-400" />
-        <span className="text-yellow-400 text-lg">{title}</span>
+      <div href={link} className="flex relative h-11 items-center">
+        <NavItemIcon className="w-6 h-6  text-yellow-400" />
+        <label
+          className={`absolute left-3 text-yellow-400 text-lg ml-6 transition-all ease-linear ${
+            !isFull ? "scale-0" : "scale-100"
+          }`}
+        >
+          {title}
+        </label>
       </div>
     </li>
   ) : (
-    <li
-      id={id}
-      className="py-2 cursor-pointer"
-      onClick={() => setCurrentLink(id)}
-    >
-      <div href={link} className="flex ">
-        <NavItemIcon className="w-6 h-6 mr-4" />
-        <span className=" text-lg">{title}</span>
+    <li id={id} className=" cursor-pointer " onClick={() => setCurrentLink(id)}>
+      <div href={link} className="flex relative h-11 items-center">
+        <NavItemIcon className="w-6 h-6" />
+        <label
+          className={`absolute left-3 text-lg ml-6 transition-all ease-linear ${
+            !isFull ? "scale-0" : "scale-100"
+          }`}
+        >
+          {title}
+        </label>
       </div>
     </li>
   )
