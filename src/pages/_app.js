@@ -6,9 +6,9 @@ import "@/styles/globals.css"
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Component {...pageProps} />
-      <SideBar />
+      {/* <SideBar /> */}
     </div>
   )
 }
