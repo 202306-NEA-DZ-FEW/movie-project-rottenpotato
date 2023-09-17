@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Home({}) {
   return (
-    <div className="bg-black">
+    <div className="bg-white dark:black text-black dark:text-white">
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 `}
       >
