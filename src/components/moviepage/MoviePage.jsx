@@ -4,18 +4,27 @@ import IMDbe from "../../images/IMDb.png"
 import { AiFillPlusCircle } from "react-icons/ai"
 import { BsStarHalf, BsStar, BsFillStarFill } from "react-icons/bs"
 import { BiTimeFive } from "react-icons/bi"
+import { HiLanguage } from "react-icons/hi2"
+import TrailerModal from "./TrailerModal"
+import { useState } from "react"
 
-export default function MoviePage({
-  titel,
-  vote_average,
-  original_language,
-  overview,
-  release_date,
-}) {
+export default function MoviePage({ movie }) {
+  const [showModal, setShowModal] = useState(false)
+  function runtime() {
+    let runtime = "N/A"
+    if (movie.runtime < 60) {
+      runtime = `${movie.runtime}min`
+    } else {
+      const hour = Math.floor(movie.runtime / 60)
+      const min = movie.runtime % 60
+      runtime = `${hour}h ${min}mins`
+    }
+    return runtime
+  }
   const renderStars = () => {
     const stars = []
-    const fullStars = Math.floor(vote_average / 2)
-    const hasHalfStar = (vote_average / 2) % 1 !== 0
+    const fullStars = Math.floor(movie.vote_average / 2)
+    const hasHalfStar = (movie.vote_average / 2) % 1 !== 0
 
     for (let i = 0; i < fullStars; i++) {
       stars.push(
@@ -45,39 +54,30 @@ export default function MoviePage({
     return stars
   }
   return (
-    <div className="bg-black mx-24 p-16">
-      <div className="flex">
+    <div className="w-full h-full flex justify-center items-center">
+      <div className="flex bg-[rgba(0,0,0,.4)] w-3/4 rounded-lg p-5">
         <div className="flex-grow p-4">
-          <h1 className="text-6xl font-semibold text-white mb-6">
-            {titel}
-            Loki
+          <h1 className="text-6xl font-semibold text-YellowPotato mb-6">
+            {movie.title}
           </h1>
-          <div className="text-white text-2xl mb-2">
-            {release_date}
-            2021{" "}
-          </div>
+          <div className="text-white text-2xl mb-2">{movie.release_date}</div>
           <div className="flex items-center text-white text-1xl ">
-            53 min <BiTimeFive className="ml-1 mr-1" /> |
-            <span className="ml-2">
-              {original_language}
-              English
+            <BiTimeFive className="mx-1" /> {runtime()} |
+            <span className="ml-2 flex flex-row items-center gap-2">
+              <HiLanguage className="ml-2" /> {movie.original_language}
             </span>
           </div>
           <div className="flex items-center text-yellow-500 mt-6 mb-6">
             {renderStars()}
 
-            <div className="w-[37.128px] h-30 flex-shrink-0 ml-4">
-              <Image src={IMDbe} alt="imdbe" className="w-full h-auto" />
+            <div className="text-white flex-shrink-0 ml-1">
+              {` | ${movie.vote_count} votes`}
             </div>
           </div>
           {/* <span className="text-white font-Lato text-25 font-semibold mb-16"> 10M+ views </span> */}
           <div className="w-[500px]">
             <p className=" text-white font-Lato text-30 font-semibold mb-9">
-              {overview}
-              {/* Loki is considered a trickster god, known for being neither fully
-              good nor evil since his main aim was always to create chaos.
-              Despite his father being a giant, he is still counted a member of
-              the Aesir—a tribe of deities including Odin, Frigg, Tyr, and Thor. */}
+              {movie.overview}
             </p>
           </div>
           <div className="text-white mb-6">
@@ -86,23 +86,35 @@ export default function MoviePage({
 
           <div className="flex mt-22">
             <div>
-              <button className="bg-gray-500 text-white px-4 py-2 rounded-lg font-Lato text-22 font-extrabold leading-5 inline-flex items-center">
+              <button className="bg-[rgba(255,255,255,.8)] text-black p-4 rounded-lg font-Lato text-22 font-extrabold leading-5 inline-flex items-center">
                 <AiFillPlusCircle className="mr-2" />
                 Watch List
               </button>
             </div>
             <div>
-              <button className="bg-yellow-500 text-black px-4 py-2 rounded-lg ml-4 font-Lato text-22 font-extrabold leading-5 items-center">
+              <button
+                className="bg-yellow-500 text-white p-4 rounded-lg ml-4 font-Lato text-22 font-extrabold leading-5 items-center"
+                onClick={() => setShowModal(true)}
+              >
                 Watch Trailer
               </button>
             </div>
           </div>
         </div>
 
-        <div className=" w-[400px] h-[500px]  ">
-          <Image src={Picture} alt="picture image" className="w-full h-auto" />
+        <div className=" w-[400px] h-[500px] rounded-xl overflow-hidden">
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt="picture image"
+            className="w-full h-full"
+          />
         </div>
       </div>
+      <TrailerModal
+        setShowModal={setShowModal}
+        showModal={showModal}
+        trailerLink={movie.video}
+      />
     </div>
   )
 }
