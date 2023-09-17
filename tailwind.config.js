@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        yellow: "0 2px 4px 0 rgba(255, 255, 0, 0.5)", // Define a yellow shadow color
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +18,7 @@ module.exports = {
       colors: {
         YellowPotato: "#F8B319",
         LightGray: "rgba(249, 249, 249, 0.2)",
+        black: "#000000",
       },
       fontFamily: {
         lucky: ["Luckiest Guy", "sans-serif"],
