@@ -19,7 +19,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-2">
+      <div class="flex flex-wrap">
         {displayedItems.map((card, index) => (
           <div
             key={index}
@@ -39,7 +39,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}
         onPageChange={handlePageChange}
-        containerClassName={"flex justify-center p-8 text-s font-bold"}
+        containerClassName={"flex justify-center p-6 text-s font-bold"}
         activeClassName={"bg-transparent text-yellow-500"}
         pageClassName={"mx-2 text-white hover:text-yellow-500"}
         previousClassName={"p-1 text-white hover:text-yellow-500"}

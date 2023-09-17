@@ -38,7 +38,7 @@ const MovieCard = ({ title, poster_path, vote_average }) => {
   }
 
   return (
-    <div className="movie-card rounded-xl overflow-hidden shadow-lg w-48 h-72 flex-shrink-0 m-1/4 mr-2 ml-2 mb-2 mt-2 relative transform transition-transform duration-300 ease-in-out hover:scale-105">
+    <div className="movie-card rounded-lg overflow-hidden shadow-lg w-48 h-72 flex-shrink-0 m-1/4 mr-2 ml-2 mb-2 mt-2 relative transform transition-transform duration-300 ease-in-out hover:scale-105">
       <div className="relative w-full h-full">
         <img src="../images/default_Rotten_potato.jpg" alt="" />
         <div

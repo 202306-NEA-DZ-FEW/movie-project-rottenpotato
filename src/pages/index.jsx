@@ -1,24 +1,29 @@
 // import MoviesCarousel from "@/components/carousel/MoviesCarousel"
 import Carousel from "better-react-carousel"
-import React from "react"
+import React, { useState } from "react"
 import fetcher from "@/utils/API"
 import CarouselMovie from "@/components/carouselMovie/CarouselMovie"
 import { FiArrowRight } from "react-icons/fi"
-import MoviesCarousel from "@/components/carousel/MoviesCarousel"
+import MoviesIndex from "@/components/MoviesIndex"
 
 export default function Home({ trendingMovies, topRated }) {
   console.log(trendingMovies)
   const carouselContainer = {
     width: "90%",
+    maxWidth: "800px",
     height: "fit-content",
-    padding: "1rem 0rem 1rem 6rem",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "2rem",
     margin: "0 auto",
   }
+
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between w-full bg-black ml-36 mt-36`}
-    >
+    <main className={`flex min-h-screen flex-col w-full bg-black`}>
       <Carousel
+        className=""
         cols={1}
         rows={1}
         gap={10}
@@ -28,40 +33,18 @@ export default function Home({ trendingMovies, topRated }) {
         hideArrow
         showDots
         containerStyle={carouselContainer}
+        viewport={(viewport) => {
+          return window.innerWidth < 768 ? 1 : Math.ceil(viewport.width / 300)
+        }}
+        currentIndex={selectedIndex} // Set the currentIndex based on the selected index
       >
-        {trendingMovies.map((movie) => (
+        {trendingMovies.map((movie, index) => (
           <Carousel.Item key={movie.id}>
             <CarouselMovie movie={movie} />
           </Carousel.Item>
         ))}
       </Carousel>
-      <div className="flex flex-col w-full justify-center items-center">
-        <div className="w-full h-max flex flex-row justify-around items-center">
-          <h1 className="text-xl font-bold text-YellowPotato">Top Rated:</h1>
-          <h1 className="text-xl font-bold text-YellowPotato">
-            view More <FiArrowRight />
-          </h1>
-        </div>
-        <MoviesCarousel items={topRated} carouselStyle={carouselContainer} />
-      </div>
-      <div className="flex flex-col w-full justify-center items-center">
-        <div className="w-full h-max flex flex-row justify-around items-center">
-          <h1 className="text-xl font-bold text-YellowPotato">Latest:</h1>
-          <h1 className="text-xl font-bold text-YellowPotato">
-            view More <FiArrowRight />
-          </h1>
-        </div>
-        <MoviesCarousel items={topRated} carouselStyle={carouselContainer} />
-      </div>
-      <div className="flex flex-col w-full justify-center items-center">
-        <div className="w-full h-max flex flex-row justify-around items-center">
-          <h1 className="text-xl font-bold text-YellowPotato">Upcoming:</h1>
-          <h1 className="text-xl font-bold text-YellowPotato">
-            view More <FiArrowRight />
-          </h1>
-        </div>
-        <MoviesCarousel items={topRated} carouselStyle={carouselContainer} />
-      </div>
+      <MoviesIndex movies={trendingMovies} />
     </main>
   )
 }
