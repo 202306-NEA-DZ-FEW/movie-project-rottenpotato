@@ -5,13 +5,17 @@ import Link from "next/link"
 export default function Movies({ movieData }) {
   console.log(movieData)
   return (
-    <div className="movies flex flex-row gap-12">
+    <main className="movies flex flex-row gap-12">
       {movieData.results.map((movie) => (
-        <Link href={`/movies/${movie.id}`} key={movie.id}>
-          {movie.tile}
+        <Link
+          className="text-black"
+          href={`/movies/${movie.id}`}
+          key={movie.id}
+        >
+          {movie.title}
         </Link>
       ))}
-    </div>
+    </main>
   )
 }
 export async function getServerSideProps() {
