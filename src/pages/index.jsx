@@ -3,19 +3,20 @@ import Carousel from "better-react-carousel"
 import React from "react"
 import fetcher from "@/utils/API"
 import CarouselMovie from "@/components/carouselMovie/CarouselMovie"
+import { FiArrowRight } from "react-icons/fi"
+import MoviesCarousel from "@/components/carousel/MoviesCarousel"
 
-export default function Home({ trendingMovies }) {
+export default function Home({ trendingMovies, topRated }) {
   console.log(trendingMovies)
   const carouselContainer = {
-    width: "100%",
+    width: "90%",
     height: "fit-content",
-    left: "0",
-    padding: "1rem 5rem",
-    margin: "1rem 0 0px 10rem",
+    padding: "1rem 0rem 1rem 6rem",
+    margin: "0 auto",
   }
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between w-full bg-black p-8 pl-40 pt-48`}
+      className={`flex min-h-screen flex-col items-center justify-between w-full bg-black ml-36 mt-36`}
     >
       <Carousel
         cols={1}
@@ -34,9 +35,33 @@ export default function Home({ trendingMovies }) {
           </Carousel.Item>
         ))}
       </Carousel>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div className="flex flex-col w-full justify-center items-center">
+        <div className="w-full h-max flex flex-row justify-around items-center">
+          <h1 className="text-xl font-bold text-YellowPotato">Top Rated:</h1>
+          <h1 className="text-xl font-bold text-YellowPotato">
+            view More <FiArrowRight />
+          </h1>
+        </div>
+        <MoviesCarousel items={topRated} carouselStyle={carouselContainer} />
+      </div>
+      <div className="flex flex-col w-full justify-center items-center">
+        <div className="w-full h-max flex flex-row justify-around items-center">
+          <h1 className="text-xl font-bold text-YellowPotato">Latest:</h1>
+          <h1 className="text-xl font-bold text-YellowPotato">
+            view More <FiArrowRight />
+          </h1>
+        </div>
+        <MoviesCarousel items={topRated} carouselStyle={carouselContainer} />
+      </div>
+      <div className="flex flex-col w-full justify-center items-center">
+        <div className="w-full h-max flex flex-row justify-around items-center">
+          <h1 className="text-xl font-bold text-YellowPotato">Upcoming:</h1>
+          <h1 className="text-xl font-bold text-YellowPotato">
+            view More <FiArrowRight />
+          </h1>
+        </div>
+        <MoviesCarousel items={topRated} carouselStyle={carouselContainer} />
+      </div>
     </main>
   )
 }
@@ -44,7 +69,8 @@ export default function Home({ trendingMovies }) {
 export async function getServerSideProps() {
   const Data = await fetcher("trending/movie/day")
   const trendingMovies = Data.results.slice(0, 3)
+  const topRated = Data.results.slice(0, 6)
   return {
-    props: { trendingMovies },
+    props: { trendingMovies, topRated },
   }
 }
