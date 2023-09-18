@@ -21,7 +21,7 @@ export default function Movie({
   console.log("director", director)
   return (
     <div className=" flex flex-col justify-between items-center">
-      <div className="relative w-full h-screen ">
+      <div className="relative w-full h-fit p-2">
         <img
           src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
           alt=""
@@ -34,12 +34,12 @@ export default function Movie({
         />
       </div>
 
-      <h1 className="text-4xl tracking-tighter font-semibold p-4 ml-7 text-black dark:text-white">
+      <h1 className="w-full text-left p-4 px-2 pl-20 box-border text-4xl tracking-tighter font-semibold  text-black dark:text-white">
         Cast
       </h1>
       <div className="w-11/12 ml-2 border-b-2 border-YellowPotato "></div>
       <ActorsCarousel items={actors} />
-      <h1 className="text-4xl tracking-tighter font-semibold  p-4 ml-7 text-black dark:text-white ">
+      <h1 className="w-full text-left p-4 px-2 pl-20 box-border text-4xl tracking-tighter font-semibold 4 text-black dark:text-white ">
         Similar movies
       </h1>
       <div className="w-11/12 ml-2 border-b-2 border-YellowPotato "></div>
