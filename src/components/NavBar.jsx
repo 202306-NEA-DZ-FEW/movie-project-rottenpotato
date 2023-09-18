@@ -7,16 +7,24 @@ import DarkModeToggle from "./DarkModeToggle"
 import logo from "../images/logo.svg"
 import Dropdown from "./DropDown/Dropdown"
 import { movieLibrary } from "@/utils/static"
+import { useRouter } from "next/router"
 const NavBar = () => {
   const [movieGenres, setMovieGenres] = useState([])
   const [tvGenres, setTvGenres] = useState([])
-  useEffect(() => {
-    fetchMovieGenres().then((res) => setMovieGenres(res.genres))
-    fetchTvGenres().then((res) => setTvGenres(res.genres))
-    fetcher("movie/upcoming?language=en-US").then((res) =>
-      console.log("resssss", res),
-    )
-  }, [])
+  // useEffect(() => {
+  //   fetchMovieGenres().then((res) => setMovieGenres(res.genres))
+  //   fetchTvGenres().then((res) => setTvGenres(res.genres))
+  //   fetcher("movie/upcoming?language=en-US").then((res) =>
+  //     console.log("resssss", res),
+  //   )
+  // }, [])
+  const router = useRouter()
+  async function handleSearch(e) {
+    if (e.keyCode === 13) {
+      router.push(`/search?query=${e.target.value}`)
+      e.target.value = ""
+    }
+  }
   return (
     <nav className="bg-DarkWhite dark:bg-black text-gray-800 dark:text-white p-4  ">
       <div className=" my-10 flex w-full justify-between align-baseline">
@@ -64,6 +72,7 @@ const NavBar = () => {
               </svg>
             </div>
             <input
+              onKeyDown={handleSearch}
               type="search"
               id="default-search"
               className="block w-full p-3 pl-10 mt-2 text-sm text-black dark:text-white rounded-lg  bg-SilverWhite dark:bg-[#21242D] border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
