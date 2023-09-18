@@ -10,17 +10,18 @@ import { useRouter } from "next/router"
 const NavBar = () => {
   const [movieGenres, setMovieGenres] = useState([])
   const [tvGenres, setTvGenres] = useState([])
-  useEffect(() => {
-    fetchMovieGenres().then((res) => setMovieGenres(res.genres))
-    fetchTvGenres().then((res) => setTvGenres(res.genres))
-    fetcher("movie/upcoming?language=en-US").then((res) =>
-      console.log("resssss", res),
-    )
-  }, [])
+  // useEffect(() => {
+  //   fetchMovieGenres().then((res) => setMovieGenres(res.genres))
+  //   fetchTvGenres().then((res) => setTvGenres(res.genres))
+  //   fetcher("movie/upcoming?language=en-US").then((res) =>
+  //     console.log("resssss", res),
+  //   )
+  // }, [])
   const router = useRouter()
   async function handleSearch(e) {
     if (e.keyCode === 13) {
       router.push(`/search?query=${e.target.value}`)
+      e.target.value = ""
     }
   }
   return (
