@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import DarkModeToggle from "../DarkModeToggle"
 
 import { AiOutlineHome } from "react-icons/ai"
 import { PiVideoCameraBold } from "react-icons/pi"
@@ -50,23 +51,29 @@ export default function SideBar({ fullSideBar }) {
           onClick={() => setIsFull(!isFull)}
         >
           <div class="space-y-2 ">
-            <div class="w-7 h-0.5 bg-gray-400"></div>
-            <div class="w-7 h-0.5 bg-gray-400"></div>
-            <div class="w-7 h-0.5 bg-gray-400"></div>
+            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400"></div>
+            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400"></div>
+            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400"></div>
           </div>
         </div>
 
         {/*  */}
+        {isFull && (
+          <div className="dark-mode-toggle mb-8">
+            <DarkModeToggle />
+          </div>
+        )}
         <div className="navigations">
           <div className="nav-items">
             <h3
               className={`${
                 isFull ? "" : "invisible"
-              } "text-lg mb-4 text-gray-300"`}
+              } "text-lg mb-2 font-bold text-gray-800 dark:text-white "`}
             >
               Menu
             </h3>
-            <ul className="flex flex-col gap-1">
+
+            <ul className="flex flex-col gap-1 text-gray-800 dark:text-white ">
               {menuNavigationList.map((navItem) => (
                 <SideBarNavItem
                   {...navItem}
@@ -79,15 +86,15 @@ export default function SideBar({ fullSideBar }) {
             </ul>
           </div>
           {/* Library section  */}
-          <div className="nav-items mt-14">
+          <div className="nav-items mt-14 text-gray-800">
             <h3
               className={`${
                 isFull ? "" : "invisible"
-              } "text-lg mb-4 text-gray-300"`}
+              } "text-lg mb-4 text-gray-800 dark:text-white "`}
             >
               Library
             </h3>
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-1 text-gray-800 dark:text-white  ">
               {movieLibrary.map((navItem) => (
                 <SideBarNavItem
                   {...navItem}

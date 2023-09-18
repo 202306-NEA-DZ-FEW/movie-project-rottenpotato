@@ -31,6 +31,8 @@ module.exports = {
         YellowPotato: "#F8B319",
         LightGray: "rgba(249, 249, 249, 0.2)",
         black: "#000000",
+        DarkWhite: "#F8F6F0",
+        SilverWhite: "#DADBDD",
       },
       fontFamily: {
         lucky: ["Luckiest Guy", "cursive"],

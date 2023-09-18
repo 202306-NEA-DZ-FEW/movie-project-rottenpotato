@@ -3,7 +3,10 @@ import MovieList from "@/components/MovieList"
 
 export default function Movies({ latestMovie }) {
   return (
-    <div className="bg-black">
+    <div className=" bg-DarkWhite dark:bg-black relative">
+      <h1 className="text-4xl font-bold p-6 text-gray-800 dark:text-white">
+        Trending On Rotting Potato
+      </h1>
       <MovieList latestMovie={latestMovie} />
     </div>
   )
