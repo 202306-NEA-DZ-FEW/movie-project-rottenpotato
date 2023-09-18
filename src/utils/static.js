@@ -11,7 +11,7 @@ export const movieLibrary = [
   },
   {
     id: "popular",
-    name: "popular",
+    name: "Popular",
     link: "?type=popular",
     icon: AiOutlineFire,
   },

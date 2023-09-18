@@ -4,7 +4,7 @@ import MovieList from "@/components/MovieList"
 import fetcher from "@/utils/API"
 export default function Movies({ latestMovie, pageTitle }) {
   return (
-    <div className=" bg-DarkWhite dark:bg-black relative">
+    <div className=" bg-DarkWhite dark:bg-black relative text-black dark:text-white">
       <MovieList latestMovie={latestMovie} pageTitle={pageTitle} />
     </div>
   )

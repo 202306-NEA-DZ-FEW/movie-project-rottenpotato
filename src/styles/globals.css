@@ -30,6 +30,14 @@ body {
   opacity: 0;
 }
 
+.actor-card:hover .bg-overlay {
+  opacity: 0;
+}
+
+.actor-card:hover .actor-details {
+  opacity: 0;
+}
+
 .dropdown {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

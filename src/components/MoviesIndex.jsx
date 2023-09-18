@@ -21,7 +21,7 @@ const MoviesIndex = ({ movies }) => {
           />
         </div>
       ))}
-      <h1 className="text-l font-bold text-white flex justify-end pr-32 pb-6 items-center hover:text-YellowPotato">
+      <h1 className="text-l font-bold text-gray-800 dark:text-white flex justify-end pr-32 pb-6 items-center hover:text-YellowPotato dark:hover:text-YellowPotato ">
         View More <FiArrowRight className="mt-1 ml-1" />
       </h1>
     </div>
