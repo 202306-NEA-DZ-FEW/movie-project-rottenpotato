@@ -40,7 +40,7 @@ module.exports = {
         opensans: ["Open Sans", "sans-serif"],
       },
       boxShadow: {
-        hs: "0px 10px 20px 40px rgba(0, 0, 0, 1)" /*hover shadow*/,
+        hs: "0px 10px 20px 40px rgba(0, 0, 0, 1)" /*hover shadow on actor card*/,
       },
     },
   },
