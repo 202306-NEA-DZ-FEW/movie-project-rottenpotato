@@ -2,11 +2,11 @@ import React from "react"
 
 export default function Home({}) {
   return (
-    <div className="bg-white dark:black text-black dark:text-white">
+    <div className="bg-DarkWhite dark:bg-black text-gray-800 dark:text-white">
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-24 `}
       >
-        <h1 className="text-7xl font-extrabold text-yellow-300">
+        <h1 className="text-7xl font-extrabold text-YellowPotato">
           Rotten potato rocks
         </h1>
       </main>

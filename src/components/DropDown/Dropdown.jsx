@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { stringify } from "postcss"
 import React, { useEffect, useRef, useState } from "react"
+import { BsCaretDownSquareFill } from "react-icons/bs"
 
-export default function Dropdown({ title, data, page }) {
+export default function Dropdown({ title, data, page, theme }) {
   const [showDropdown, setShowDropdown] = useState(false)
   const dropdown = useRef(null)
   const buttonRef = useRef(null)
@@ -30,25 +31,13 @@ export default function Dropdown({ title, data, page }) {
       <button
         ref={buttonRef}
         onClick={() => setShowDropdown((showDropdown) => !showDropdown)}
-        className="t focus:outline-none text-white focus:ring-blue-300 font-medium rounded-lg   py-2 text-center inline-flex items-center"
+        className="t focus:outline-none  focus:ring-blue-300 font-medium rounded-lg   py-2 text-center inline-flex items-center text-gray-800 dark:text-white"
         type="button"
       >
         {title}{" "}
-        <svg
-          className="w-2.5 h-2.5 ml-2.5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
+        <BsCaretDownSquareFill
+          className={`w-4 h-4 ml-2 mt-2 ${theme ? "rotate-180" : ""}`}
+        />
       </button>
       {/* <!-- Dropdown menu --> */}
       <div
@@ -58,7 +47,7 @@ export default function Dropdown({ title, data, page }) {
         } "z-10  absolute divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"`}
       >
         <ul
-          className="py-2 text-sm z-10 text-gray-100 bg-black dark:text-gray-200"
+          className="rounded-lg py-2 text-sm z-10 bg-SilverWhite dark:bg-gray-800 text-gray-800 dark:text-white absolute dropdown"
           aria-labelledby="dropdownDefaultButton"
         >
           {data &&

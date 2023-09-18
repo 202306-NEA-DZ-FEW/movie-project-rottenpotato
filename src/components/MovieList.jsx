@@ -9,13 +9,7 @@ const MovieList = ({ latestMovie }) => {
   const pageRangeDisplayed = 5
 
   return (
-    <div className="">
-      {/* <NavBar /> */}
-      <h1 className="text-white text-4xl font-bold p-6">
-        Trending On Rotting Potato
-      </h1>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-2"></div> */}
-
+    <div className="relative">
       <Pagination
         totalItems={latestMovie.results}
         itemsPerPage={moviesPerPage}

@@ -2,6 +2,7 @@ import fetcher, { fetchMovieGenres, fetchTvGenres } from "@/utils/API"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import DarkModeToggle from "./DarkModeToggle"
 
 import logo from "../images/logo.svg"
 import Dropdown from "./DropDown/Dropdown"
@@ -17,7 +18,7 @@ const NavBar = () => {
     )
   }, [])
   return (
-    <nav className="bg-black p-4  ">
+    <nav className="bg-DarkWhite dark:bg-black text-gray-800 dark:text-white p-4  ">
       <div className=" my-10 flex w-full justify-between align-baseline">
         <div className="logo flex ml-12">
           <Image src={logo} width={59} height={59} alt="logo image" />
@@ -26,21 +27,21 @@ const NavBar = () => {
           </span>
         </div>
 
-        <div className="text-2xl flex gap-8">
+        <div className="text-2xl flex gap-6 font-semibold ">
           <Link href="/" passHref className="py-2">
             Home
           </Link>
           <Dropdown title={"Movies"} data={movieLibrary} page={"movies/"} />
           <Dropdown title={"Genre"} data={movieGenres} page={"movies/"} />
           <Dropdown title={"TvShows"} data={tvGenres} page={"shows/"} />
-          <Link href="/actors" passHref className="py-2">
+          <Link href="/actors" passHref className="py-2 ">
             Actors
           </Link>
         </div>
         <div className="search mr-4">
           <label
             for="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            className="mb-2 text-sm font-medium text-gray-800 sr-only dark:text-white"
           >
             Search
           </label>
@@ -65,13 +66,14 @@ const NavBar = () => {
             <input
               type="search"
               id="default-search"
-              className="block w-full p-3 pl-10 text-sm text-white rounded-lg   bg-[#21242D] border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
+              className="block w-full p-3 pl-10 mt-2 text-sm text-black dark:text-white rounded-lg  bg-SilverWhite dark:bg-[#21242D] border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
               placeholder="Search Mockups, Logos..."
               required
             />
           </div>
         </div>
       </div>
+      <div className="w-9/12 ml-10 border-b-2 border-YellowPotato mb-4"></div>
     </nav>
   )
 }

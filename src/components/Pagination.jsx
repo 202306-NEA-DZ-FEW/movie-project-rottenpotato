@@ -19,7 +19,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-6">
+      <div className="flex flex-wrap gap-6 relative">
         {displayedItems.map((card, index) => (
           <div key={index} className="">
             <MovieCard {...card} />
@@ -28,21 +28,24 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
       </div>
 
       <ReactPaginate
-        previousLabel={<BsCaretLeftFill></BsCaretLeftFill>}
-        nextLabel={<BsCaretRightFill></BsCaretRightFill>}
+        previousLabel={<BsCaretLeftFill />}
+        nextLabel={<BsCaretRightFill />}
         breakLabel={"..."}
-        breakClassName={"break-me text-white"}
+        breakClassName={"break-me text-black dark:text-white"}
         pageCount={totalPages}
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}
         onPageChange={handlePageChange}
         containerClassName={"flex justify-center p-8 text-s font-bold"}
-        activeClassName={"bg-transparent text-yellow-500"}
-        pageClassName={"mx-2 text-white hover:text-yellow-500"}
-        previousClassName={"p-1 text-white hover:text-yellow-500"}
-        nextClassName={"p-1 text-white hover:text-yellow-500"}
-        pageLinkClassName={"page-link text-white hover:text-yellow-500"}
-        activeLinkClassName={"text-white text-yellow-500"}
+        pageClassName={"mx-2 text-black dark:text-white hover:text-yellow-500"}
+        previousClassName={
+          "p-1 text-black dark:text-white hover:text-yellow-500"
+        }
+        nextClassName={"p-1 text-black dark:text-white hover:text-yellow-500 "}
+        pageLinkClassName={
+          " hover:text-YellowPotato dark:hover:text-YellowPotato text-black dark:text-white"
+        }
+        activeLinkClassName={" text-YellowPotato "}
       />
     </>
   )

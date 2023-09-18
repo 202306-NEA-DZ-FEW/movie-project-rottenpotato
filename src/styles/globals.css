@@ -30,7 +30,21 @@ body {
   opacity: 0;
 }
 
-.movie-card:hover .more-info,
-.movie-card:hover .add-button {
-  opacity: 0;
+.dropdown {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.dropdown {
+  font-size: 14px;
+}
+
+.light-mode-svg {
+  fill: rgb(31 41 55);
+}
+
+.dark-mode-svg {
+  fill: white;
 }
