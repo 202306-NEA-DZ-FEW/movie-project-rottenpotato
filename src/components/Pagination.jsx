@@ -19,7 +19,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-6 relative">
+      <div class="flex flex-wrap">
         {displayedItems.map((card, index) => (
           <div key={index} className="">
             <MovieCard {...card} />
