@@ -22,7 +22,7 @@ const NavBar = () => {
         <div className="logo flex ml-12">
           <Image src={logo} width={59} height={59} alt="logo image" />
           <span className="font-lucky text-YellowPotato w-32 text-[2rem] uppercase leading-8 ml-2">
-            Rotten Potatos
+            Rotten Potato
           </span>
         </div>
 
