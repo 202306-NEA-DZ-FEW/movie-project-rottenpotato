@@ -7,8 +7,8 @@ import MoviesCarousel from "@/components/carousel/MoviesCarousel"
 function SingleActor({ actor, movies }) {
   console.log("actor,", actor)
   return (
-    <main className="flex flex-col lg:grid grid-cols-[40%_60%] bg-black w-full p-4 gap-y-8">
-      <div className="p-4 flex flex-col justify-start  row-start-1 col-start-1 col-end-2 items-center gap-4">
+    <main className=" flex flex-col lg:grid grid-cols-[40%_60%] bg-black w-full p-4 gap-y-8">
+      <div className=" p-4 flex flex-col justify-start  row-start-1 col-start-1 col-end-2 items-center gap-4">
         <img
           className="rounded-mr w-[19rem] h-[24rem] "
           src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}

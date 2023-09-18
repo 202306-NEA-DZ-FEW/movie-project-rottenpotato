@@ -54,10 +54,10 @@ export default function MoviePage({ movie, trailer, director }) {
     return stars
   }
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div className="flex bg-[rgba(0,0,0,.4)] w-3/4 rounded-lg p-5">
-        <div className="flex-grow p-4">
-          <h1 className="text-6xl font-semibold text-YellowPotato mb-6">
+    <div className="w-full h-full flex justify-center items-center ">
+      <div className="grid grid-rows-[80%_20%] grid-cols-[60%_40%] bg-[rgba(0,0,0,.4)] w-3/4 rounded-lg p-5">
+        <div className="flex-grow p-4 row-start-1 col-start-1">
+          <h1 className="text-6xl font-semibold text-YellowPotato mb-6 ">
             {movie.title}
           </h1>
           <div className="text-white text-2xl mb-2">{movie.release_date}</div>
@@ -86,7 +86,7 @@ export default function MoviePage({ movie, trailer, director }) {
 
           <div className="flex mt-22">
             <div>
-              <button className="bg-[rgba(255,255,255,.8)] text-black p-4 rounded-lg font-Lato text-22 font-extrabold leading-5 inline-flex items-center">
+              <button className="bg-[rgba(255,255,255,.8)] text-black p-4 rounded-lg font-Lato text-22 font-extrabold leading-5 inline-flex items-center ">
                 <AiFillPlusCircle className="mr-2" />
                 Watch List
               </button>
@@ -100,32 +100,33 @@ export default function MoviePage({ movie, trailer, director }) {
               </button>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-start gap-3 p-3 rounded-md w-fit max-w-full flex-wrap bg-[rgba(255,255,255,.5)] mt-6">
-            {movie.production_companies.map((company) => (
-              <div key={company.id} className="flex flex-col items-center ">
-                <img
-                  src={
-                    company.logo_path
-                      ? `https://image.tmdb.org/t/p/w500${company.logo_path}`
-                      : "/rotten_potato_icon.svg"
-                  }
-                  alt={company.name}
-                  className="h-10 w-10"
-                />
-                <span className="text-white font-medium text-sm">
-                  {company.name}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className=" w-[400px] h-[500px] rounded-xl overflow-hidden">
+        <div className=" rounded-xl overflow-hidden row-start-1 col-start-2 ">
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt="picture image"
-            className="w-full h-full"
+            className="w-full h-full rounded-lg"
           />
+        </div>
+
+        <div className="w-full flex flex-row items-center justify-around gap-3 p-0 rounded-md max-w-full flex-wrap bg-[rgba(255,255,255,.5)] mt-6 row-start-2 col-start-1 col-span-2 ">
+          {movie.production_companies.map((company) => (
+            <div key={company.id} className="flex flex-col items-center">
+              <img
+                src={
+                  company.logo_path
+                    ? `https://image.tmdb.org/t/p/w500${company.logo_path}`
+                    : "/rotten_potato_icon.svg"
+                }
+                alt={company.name}
+                className="h-10 w-10"
+              />
+              <span className="text-white font-medium text-xs">
+                {company.name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
       <TrailerModal

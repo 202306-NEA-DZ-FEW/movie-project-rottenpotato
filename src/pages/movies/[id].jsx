@@ -20,14 +20,29 @@ export default function Movie({
   console.log("similar", similarMovies)
   console.log("director", director)
   return (
-    <div className=" relative w-full h-screen p-0">
-      <img
-        src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
-        alt=""
-        className="-z-10 absolute top-0 bg-blend-overlay backdrop-blur-3xl bottom-0 left-0 right-0 w-full h-full"
-      />
-      <MoviePage movie={movieData} trailer={trailer} director={director.name} />
+    <div className=" flex flex-col justify-between items-center">
+      <div className="relative w-full h-screen ">
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
+          alt=""
+          className="-z-10 absolute top-0 bg-blend-overlay backdrop-blur-3xl bottom-0 left-0 right-0 w-full h-full"
+        />
+        <MoviePage
+          movie={movieData}
+          trailer={trailer}
+          director={director.name}
+        />
+      </div>
+
+      <h1 className="text-4xl tracking-tighter font-semibold p-4 ml-7 text-black dark:text-white">
+        Cast
+      </h1>
+      <div className="w-11/12 ml-2 border-b-2 border-YellowPotato "></div>
       <ActorsCarousel items={actors} />
+      <h1 className="text-4xl tracking-tighter font-semibold  p-4 ml-7 text-black dark:text-white ">
+        Similar movies
+      </h1>
+      <div className="w-11/12 ml-2 border-b-2 border-YellowPotato "></div>
       <MoviesCarousel items={similarMovies} />
     </div>
   )
