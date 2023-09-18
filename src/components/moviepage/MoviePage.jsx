@@ -8,7 +8,7 @@ import { HiLanguage } from "react-icons/hi2"
 import TrailerModal from "./TrailerModal"
 import { useState } from "react"
 
-export default function MoviePage({ movie }) {
+export default function MoviePage({ movie, trailer, director }) {
   const [showModal, setShowModal] = useState(false)
   function runtime() {
     let runtime = "N/A"
@@ -81,7 +81,7 @@ export default function MoviePage({ movie }) {
             </p>
           </div>
           <div className="text-white mb-6">
-            <strong>Directors</strong> : Kate Herron{" "}
+            <strong>Director</strong> : {director}
           </div>
 
           <div className="flex mt-22">
@@ -100,6 +100,24 @@ export default function MoviePage({ movie }) {
               </button>
             </div>
           </div>
+          <div className="flex flex-row items-center justify-start gap-3 p-3 rounded-md w-fit max-w-full flex-wrap bg-[rgba(255,255,255,.5)] mt-6">
+            {movie.production_companies.map((company) => (
+              <div key={company.id} className="flex flex-col items-center ">
+                <img
+                  src={
+                    company.logo_path
+                      ? `https://image.tmdb.org/t/p/w500${company.logo_path}`
+                      : "/rotten_potato_icon.svg"
+                  }
+                  alt={company.name}
+                  className="h-10 w-10"
+                />
+                <span className="text-white font-medium text-sm">
+                  {company.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className=" w-[400px] h-[500px] rounded-xl overflow-hidden">
@@ -113,7 +131,8 @@ export default function MoviePage({ movie }) {
       <TrailerModal
         setShowModal={setShowModal}
         showModal={showModal}
-        trailerLink={movie.video}
+        trailerKey={trailer[0].key}
+        name={trailer[0].name}
       />
     </div>
   )
