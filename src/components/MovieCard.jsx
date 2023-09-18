@@ -1,5 +1,7 @@
 const MovieCard = ({ title, poster_path, vote_average }) => {
-  const posterImageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`
+  const posterImageUrl = poster_path
+    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    : "@/images/default_Rotten_potato.svg"
 
   //Calculating the number of stars based on voting average, then rendering them.
   const numStars = Math.round(vote_average / 2)
@@ -30,7 +32,7 @@ const MovieCard = ({ title, poster_path, vote_average }) => {
       <div className="relative w-full h-full">
         <div
           className="absolute top-0 left-0 w-full h-full bg-contain bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${posterImageUrl})` }}
+          style={{ backgroundImage: `url('${posterImageUrl}')` }}
         ></div>
 
         {/* Gradient effect on the card */}
