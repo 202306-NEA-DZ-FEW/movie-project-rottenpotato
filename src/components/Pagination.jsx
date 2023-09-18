@@ -29,9 +29,15 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
   return (
     <>
       <div className="flex flex-wrap gap-6">
-        {totalItems.map((card, index) => (
+        {totalItems.map((movie, index) => (
           <div key={index} className="">
-            <MovieCard {...card} />
+            <MovieCard
+              movie_id={movie.id}
+              key={movie.id}
+              title={movie.title}
+              poster_path={movie.poster_path}
+              vote_average={movie.vote_average}
+            />
           </div>
         ))}
       </div>

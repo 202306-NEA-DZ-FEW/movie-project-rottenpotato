@@ -5,10 +5,12 @@ import ActorCard from "@/components/ActorCard/ActorCard"
 function Actors({ peopleData }) {
   console.log(peopleData)
   return (
-    <main className="bg-DarkWhite dark:bg-black text-gray-800 dark:text-white w-full p-4  flex flex-col md:flex-row flex-wrap items-center justify-around gap-8 ">
-      <div className="w-full flex flex-col gap-4 overflow-hidden px-8 mb-8">
-        <h1 className="font-normal text-3xl">Actors</h1>
-        <div className="w-9/12 border-b-2 border-YellowPotato mb-2"></div>
+    <main className="font-semibold bg-DarkWhite dark:bg-black text-gray-800 dark:text-white w-full flex flex-col md:flex-row flex-wrap justify-around">
+      <div className="w-full flex flex-col overflow-hidden px-4 mb-2">
+        <h1 className="text-gray-800 dark:text-white text-4xl font-bold p-6 mb-2">
+          Actors
+        </h1>
+        <div className="w-9/12 border-b-2 border-YellowPotato mb-6"></div>
       </div>
       {peopleData.results.map((person) => (
         <ActorCard key={person.id} person={person} />

@@ -28,6 +28,7 @@ export default function Search() {
     searchResults.results &&
     searchResults.results.map((movie) => (
       <MovieCard
+        movie_id={movie.id}
         key={movie.id}
         title={movie.title}
         poster_path={movie.poster_path}
@@ -46,7 +47,7 @@ export default function Search() {
   return (
     <div>
       <h1
-        className=" font-bold relative mb-12 text-4xl w-full flex flex-col after:content[''] after:bg-white after:absolute after:-bottom-6
+        className=" font-bold relative mb-12 text-4xl pt-6 w-full flex flex-col after:content[''] after:bg-gray-800 dark:after:bg-white after:absolute after:-bottom-6
        after:left-0 after:w-11/12 after:h-[2px]"
       >
         Search results for: {` ${query}`}

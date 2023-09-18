@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 
     pageTitle = type.split("_").join(" ")
   } else {
-    url = "trending/movie/day?language=en-US&page=" + parsedPage
+    url = "trending/movie/week?language=en-US&page=" + parsedPage
     pageTitle = genre
   }
 
@@ -51,7 +51,7 @@ export async function getServerSideProps(context) {
         console.log("filtered", allMovies)
       }
 
-      if (currentPage >= 22) {
+      if (currentPage >= data.allpages) {
         break
       }
 
