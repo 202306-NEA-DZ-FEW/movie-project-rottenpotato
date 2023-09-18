@@ -21,7 +21,9 @@ export default function Home({ trendingMovies, topRated }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   return (
-    <main className={`flex min-h-screen flex-col w-full bg-black`}>
+    <main
+      className={` flex min-h-screen flex-col w-full bg-DarkWhite dark:bg-black text-black dark:text-white `}
+    >
       <Carousel
         className=""
         cols={1}

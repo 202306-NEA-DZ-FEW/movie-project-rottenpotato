@@ -13,7 +13,7 @@ const menuNavigationList = [
     id: "home",
     name: "Home",
     icon: AiOutlineHome,
-    link: "/home",
+    link: "/",
   },
   {
     id: "actors",
@@ -41,34 +41,35 @@ export default function SideBar({ fullSideBar }) {
     <div
       className={`${
         isFull ? "w-64 " : "w-32"
-      } transition-all duration-300 ease-out fixed h-full left-0 top-40 bg-black`}
+      } transition-all duration-300 ease-out`}
     >
       <div className="container pl-16  ">
         <div
           className={`hamburger  transition-all duration-300 ease-out flex ${
-            isFull ? "ml-40" : "ml-0"
+            isFull ? "ml-0" : "ml-0"
           } mb-8 ${fullSideBar ? "hidden" : ""}`}
           onClick={() => setIsFull(!isFull)}
         >
           <div class="space-y-2 ">
-            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400"></div>
-            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400"></div>
-            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400"></div>
+            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400 mt-2"></div>
+            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400 mt-2"></div>
+            <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400 mt-2"></div>
           </div>
         </div>
 
         {/*  */}
-        {isFull && (
-          <div className="dark-mode-toggle mb-8">
-            <DarkModeToggle />
-          </div>
-        )}
+
         <div className="navigations">
+          {isFull && (
+            <div className="dark-mode-toggle mb-8">
+              <DarkModeToggle />
+            </div>
+          )}
           <div className="nav-items">
             <h3
               className={`${
                 isFull ? "" : "invisible"
-              } "text-lg mb-2 font-bold text-gray-800 dark:text-white "`}
+              } "text-lg mb-2 text-gray-800 dark:text-white "`}
             >
               Menu
             </h3>

@@ -55,7 +55,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
         pageLinkClassName={
           " hover:text-YellowPotato dark:hover:text-YellowPotato text-black dark:text-white"
         }
-        activeLinkClassName={" text-YellowPotato "}
+        activeLinkClassName={"text-YellowPotato dark:text-YellowPotato "}
       />
     </>
   )

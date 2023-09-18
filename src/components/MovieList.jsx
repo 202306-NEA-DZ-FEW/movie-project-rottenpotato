@@ -10,10 +10,11 @@ const MovieList = ({ latestMovie, pageTitle }) => {
   console.log("laaateset", latestMovie)
   return (
     <div className="">
-      {/* <NavBar /> */}
-      <h1 className="text-white text-4xl font-bold p-6 mb-8">
+      <h1 className="text-gray-800 dark:text-white text-4xl font-bold p-6 mb-2">
         <span className="capitalize"> {pageTitle}</span> On Rotten Potatos
       </h1>
+      <div className="w-9/12 ml-10 border-b-2 border-YellowPotato mb-6"></div>
+
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-2"></div> */}
 
       <Pagination

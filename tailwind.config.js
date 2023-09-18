@@ -33,6 +33,9 @@ module.exports = {
         black: "#000000",
         DarkWhite: "#F8F6F0",
         SilverWhite: "#DADBDD",
+        OrangeWhite: "#F7E6BF",
+        Licorice: "#28282B",
+        Onyx: "#343434",
       },
       fontFamily: {
         lucky: ["Luckiest Guy", "cursive"],
