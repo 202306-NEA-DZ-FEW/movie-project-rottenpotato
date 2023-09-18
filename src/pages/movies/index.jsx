@@ -1,6 +1,7 @@
 import React from "react"
 import MovieList from "@/components/MovieList"
 
+import fetcher from "@/utils/API"
 export default function Movies({ latestMovie, pageTitle }) {
   return (
     <div className="bg-black">
@@ -11,49 +12,43 @@ export default function Movies({ latestMovie, pageTitle }) {
 
 export async function getServerSideProps(context) {
   console.log("inside function movie page", context.query)
-  const { type, genre, page = 1 } = context.query
+  const { type, genre, page = 1, genre_id } = context.query
   const parsedPage = parseInt(page)
   console.log("pageee", page)
   let url = ""
   let pageTitle = ""
   if (type) {
     if (type === "latest") {
-      url = "https://api.themoviedb.org/3/movie/" + type + "?language=en-US"
+      url = "movie/" + type + "?language=en-US"
     } else {
-      url =
-        "https://api.themoviedb.org/3/movie/" +
-        type +
-        "?language=en-US&page=" +
-        parsedPage
+      url = "movie/" + type + "?language=en-US&page=" + parsedPage
     }
 
     pageTitle = type.split("_").join(" ")
   } else {
-    url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US"
+    url = "trending/movie/day?language=en-US&page=" + parsedPage
     pageTitle = genre
   }
 
-  const options = {
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjM2E0NmFiZWRiMzlhZDFiMWUzOGZkMTU3MjMxNTg5NCIsInN1YiI6IjY1MDFkY2VhMWJmMjY2MDBlMjVlOWE1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1SrV7nu-AkMDVUbBc6RDXdTFftDAb4IlRXEj0wnyxwM",
-    },
-  }
   let allMovies = []
   let currentPage = 1
 
   try {
     while (currentPage < 2) {
-      const response = await fetch(`${url}`, options)
-      const data = await response.json()
-      // console.log("data", data.results)
+      const data = await fetcher(url)
+      console.log("dataaaaaaaaaaaaaaaaaaaaaaaa", data)
       if (data.results || data) {
         if (type === "latest") {
           allMovies = [data]
         } else {
           allMovies = [...data.results]
         }
+      }
+      if (genre) {
+        allMovies = data.results.filter((movie) =>
+          movie.genre_ids.includes(parseInt(genre_id)),
+        )
+        console.log("filtered", allMovies)
       }
 
       if (currentPage >= 22) {

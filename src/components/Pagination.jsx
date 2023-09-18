@@ -10,7 +10,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
   console.log("routerr", router)
   const path = router.asPath
   const page = parseInt(router.query.page) || 1
-  const [currentPage, setCurrentPage] = useState(page)
+  const [currentPage, setCurrentPage] = useState(0)
 
   const handlePageChange = ({ selected }) => {
     // window.location.href = path + "&page=" + selected
