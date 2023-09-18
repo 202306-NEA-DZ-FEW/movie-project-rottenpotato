@@ -1,39 +1,54 @@
 import React from "react"
 import MovieList from "@/components/MovieList"
 
-export default function Movies({ latestMovie }) {
+import fetcher from "@/utils/API"
+export default function Movies({ latestMovie, pageTitle }) {
   return (
     <div className=" bg-DarkWhite dark:bg-black relative">
-      <h1 className="text-4xl font-bold p-6 text-gray-800 dark:text-white">
-        Trending On Rotting Potato
-      </h1>
-      <MovieList latestMovie={latestMovie} />
+      <MovieList latestMovie={latestMovie} pageTitle={pageTitle} />
     </div>
   )
 }
 
-console.log("before function")
-export async function getStaticProps() {
-  console.log("inside function")
+export async function getServerSideProps(context) {
+  console.log("inside function movie page", context.query)
+  const { type, genre, page = 1, genre_id } = context.query
+  const parsedPage = parseInt(page)
+  console.log("pageee", page)
+  let url = ""
+  let pageTitle = ""
+  if (type) {
+    if (type === "latest") {
+      url = "movie/" + type + "?language=en-US"
+    } else {
+      url = "movie/" + type + "?language=en-US&page=" + parsedPage
+    }
 
-  const url = "https://api.themoviedb.org/3/trending/movie/week?language=en-US"
-  const options = {
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjM2E0NmFiZWRiMzlhZDFiMWUzOGZkMTU3MjMxNTg5NCIsInN1YiI6IjY1MDFkY2VhMWJmMjY2MDBlMjVlOWE1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1SrV7nu-AkMDVUbBc6RDXdTFftDAb4IlRXEj0wnyxwM",
-    },
+    pageTitle = type.split("_").join(" ")
+  } else {
+    url = "trending/movie/day?language=en-US&page=" + parsedPage
+    pageTitle = genre
   }
+
   let allMovies = []
   let currentPage = 1
 
   try {
-    while (true) {
-      const response = await fetch(`${url}&page=${currentPage}`, options)
-      const data = await response.json()
-
-      if (data.results) {
-        allMovies = allMovies.concat(data.results)
+    while (currentPage < 2) {
+      const data = await fetcher(url)
+      console.log("dataaaaaaaaaaaaaaaaaaaaaaaa", data)
+      if (data.results || data) {
+        if (type === "latest") {
+          allMovies = [data]
+        } else {
+          allMovies = [...data.results]
+        }
+      }
+      if (genre) {
+        allMovies = data.results.filter((movie) =>
+          movie.genre_ids.includes(parseInt(genre_id)),
+        )
+        console.log("filtered", allMovies)
       }
 
       if (currentPage >= 22) {
@@ -48,6 +63,7 @@ export async function getStaticProps() {
   return {
     props: {
       latestMovie: { results: allMovies },
+      pageTitle,
     },
   }
 }

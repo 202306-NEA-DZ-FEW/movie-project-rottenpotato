@@ -6,31 +6,31 @@ export const movieLibrary = [
   {
     id: "now playing",
     name: "Now Playing",
-    link: "movie/upcoming?language=en-US",
+    link: "?type=now_playing",
     icon: RxStopwatch,
   },
   {
     id: "popular",
     name: "popular",
-    link: "movie/popular?language=en-US",
+    link: "?type=popular",
     icon: AiOutlineFire,
   },
   {
     id: "top rated",
     name: "Top Rated",
-    link: "movie/top_rated?language=en-US",
+    link: "?type=top_rated",
     icon: AiOutlineStar,
   },
   {
     id: "upcoming",
     name: "Upcoming",
-    link: "movie/upcoming?language=en-US",
+    link: "?type=upcoming",
     icon: MdDownloading,
   },
   {
     id: "latest",
     name: "Latest",
-    link: "movie/latest",
+    link: "?type=latest",
     icon: MdOutlineWbTwilight,
   },
 ]
