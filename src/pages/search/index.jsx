@@ -18,16 +18,27 @@ export default function Search() {
       })
     }
   }, [query])
+  const results =
+    searchResults.results &&
+    searchResults.results.map((movie) => (
+      <MovieCard
+        key={movie.id}
+        title={movie.title}
+        poster_path={movie.poster_path}
+        vote_average={movie.vote_average}
+      />
+    ))
+  const loading = <span>Loading...</span>
 
   return (
     <div>
       <h1>Search results for: {query}</h1>
       <div className="w-full flex flex-wrap overflow-hidden">
-        {/* {searchResults.results.map(movie=>(
-        <MovieCard key={movie.id} title={movie.title} poster_path={movie.poster_path} vote_average={movie.vote_average}/>))} */}
-        {searchResults.results.foreach((movie) => (
-          <h1>{movie.title}</h1>
-        ))}
+        {searchResults.results ? results : loading}
+
+        {/* {searchResults.results && searchResults.results.map(movie => (
+        <MovieCard key={movie.id} title={movie.title} poster_path={movie.poster_path} vote_average={movie.vote_average}/>
+      ))} */}
       </div>
       {console.log("res serch", searchResults.results)}
     </div>
