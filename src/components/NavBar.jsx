@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import logo from "../images/logo.svg"
 import Dropdown from "./DropDown/Dropdown"
 import { movieLibrary } from "@/utils/static"
+import { useRouter } from "next/router"
 const NavBar = () => {
   const [movieGenres, setMovieGenres] = useState([])
   const [tvGenres, setTvGenres] = useState([])
@@ -16,6 +17,12 @@ const NavBar = () => {
       console.log("resssss", res),
     )
   }, [])
+  const router = useRouter()
+  async function handleSearch(e) {
+    if (e.keyCode === 13) {
+      router.push(`/search?query=${e.target.value}`)
+    }
+  }
   return (
     <nav className="bg-black p-4  ">
       <div className=" my-10 flex w-full justify-between align-baseline">
@@ -63,6 +70,7 @@ const NavBar = () => {
               </svg>
             </div>
             <input
+              onKeyDown={handleSearch}
               type="search"
               id="default-search"
               className="block w-full p-3 pl-10 text-sm text-white rounded-lg   bg-[#21242D] border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
