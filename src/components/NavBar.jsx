@@ -12,9 +12,9 @@ const NavBar = () => {
   useEffect(() => {
     fetchMovieGenres().then((res) => setMovieGenres(res.genres))
     fetchTvGenres().then((res) => setTvGenres(res.genres))
-    fetcher("movie/upcoming?language=en-US").then((res) =>
-      console.log("resssss", res),
-    )
+    // fetcher("movie/latest?language=en-US").then((res) =>
+    //   console.log("resssss", res),
+    // )
   }, [])
   return (
     <nav className="bg-black p-4  ">
@@ -30,10 +30,10 @@ const NavBar = () => {
           <Link href="/" passHref className="py-2">
             Home
           </Link>
-          <Dropdown title={"Movies"} data={movieLibrary} page={"movies/"} />
-          <Dropdown title={"Genre"} data={movieGenres} page={"movies/"} />
-          <Dropdown title={"TvShows"} data={tvGenres} page={"shows/"} />
-          <Link href="/actors" passHref className="py-2">
+          <Dropdown title={"Movies"} data={movieLibrary} page={"/movies"} />
+          <Dropdown title={"Genre"} data={movieGenres} page={"/movies"} />
+          <Dropdown title={"TvShows"} data={tvGenres} page={"/shows"} />
+          <Link href="/actors" className="py-2">
             Actors
           </Link>
         </div>

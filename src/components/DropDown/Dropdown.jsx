@@ -63,7 +63,7 @@ export default function Dropdown({ title, data, page }) {
         >
           {data &&
             data.map((item) => {
-              const link = item.link ? item.link : item.name
+              const link = item.link ? item.link : "?genre=" + item.name
               return (
                 <li key={item.id}>
                   <Link

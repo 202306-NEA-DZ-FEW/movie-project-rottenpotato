@@ -1,19 +1,38 @@
 import React from "react"
 import MovieList from "@/components/MovieList"
 
-export default function Movies({ latestMovie }) {
+export default function Movies({ latestMovie, pageTitle }) {
   return (
     <div className="bg-black">
-      <MovieList latestMovie={latestMovie} />
+      <MovieList latestMovie={latestMovie} pageTitle={pageTitle} />
     </div>
   )
 }
 
-console.log("before function")
-export async function getStaticProps() {
-  console.log("inside function")
+export async function getServerSideProps(context) {
+  console.log("inside function movie page", context.query)
+  const { type, genre, page = 1 } = context.query
+  const parsedPage = parseInt(page)
+  console.log("pageee", page)
+  let url = ""
+  let pageTitle = ""
+  if (type) {
+    if (type === "latest") {
+      url = "https://api.themoviedb.org/3/movie/" + type + "?language=en-US"
+    } else {
+      url =
+        "https://api.themoviedb.org/3/movie/" +
+        type +
+        "?language=en-US&page=" +
+        parsedPage
+    }
 
-  const url = "https://api.themoviedb.org/3/trending/movie/week?language=en-US"
+    pageTitle = type.split("_").join(" ")
+  } else {
+    url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US"
+    pageTitle = genre
+  }
+
   const options = {
     headers: {
       accept: "application/json",
@@ -25,12 +44,16 @@ export async function getStaticProps() {
   let currentPage = 1
 
   try {
-    while (true) {
-      const response = await fetch(`${url}&page=${currentPage}`, options)
+    while (currentPage < 2) {
+      const response = await fetch(`${url}`, options)
       const data = await response.json()
-
-      if (data.results) {
-        allMovies = allMovies.concat(data.results)
+      // console.log("data", data.results)
+      if (data.results || data) {
+        if (type === "latest") {
+          allMovies = [data]
+        } else {
+          allMovies = [...data.results]
+        }
       }
 
       if (currentPage >= 22) {
@@ -45,6 +68,7 @@ export async function getStaticProps() {
   return {
     props: {
       latestMovie: { results: allMovies },
+      pageTitle,
     },
   }
 }
