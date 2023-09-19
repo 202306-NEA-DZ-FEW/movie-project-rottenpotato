@@ -1,5 +1,4 @@
 import React from "react"
-import Image from "next/image"
 import Link from "next/link"
 
 function ActorCard({ person }) {
@@ -15,7 +14,7 @@ function ActorCard({ person }) {
             style={{ backgroundImage: `url(${profileImageUrl})` }}
           ></div>
 
-          <div className="bg-overlay absolute top-0 left-0 w-full h-full bg-gray-900 opacity-60 transition-opacity duration-300 ease-in-out"></div>
+          <div className="bg-overlay absolute top-0 left-0 w-full dark:h-full bg-gradient-to-b from-black to-transparent h-4/6 dark:bg-gray-900 opacity-60 transition-opacity duration-300 ease-in-out"></div>
         </div>
 
         <div className="actor-details absolute top-0 left-0 w-full p-3 text-white transition-opacity duration-300 ease-in-out opacity-100">

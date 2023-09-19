@@ -2,12 +2,12 @@ import fetcher, { fetchMovieGenres, fetchTvGenres } from "@/utils/API"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import DarkModeToggle from "./DarkModeToggle"
 
-import logo from "../images/logo.svg"
-import Dropdown from "./DropDown/Dropdown"
+import logo from "../../images/logo.svg"
+import Dropdown from "../DropDown/Dropdown"
 import { movieLibrary } from "@/utils/static"
 import { useRouter } from "next/router"
+import DarkModeToggle from "../DarkMode/DarkModeToggle"
 
 const NavBar = () => {
   const [movieGenres, setMovieGenres] = useState([])

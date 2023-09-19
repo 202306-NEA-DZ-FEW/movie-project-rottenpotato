@@ -1,12 +1,12 @@
 import SideBar from "@/components/SideBar/SideBar"
-import NavBar from "../components/NavBar"
+import NavBar from "../components/NavBar/NavBar"
 import { useRouter } from "next/router"
 import { ThemeProvider } from "next-themes"
 import React, { useEffect } from "react"
 import Head from "next/head"
-import DarkModeToggle from "@/components/DarkModeToggle"
-import Footer from "../components/Footer"
+import Footer from "../components/Footer/Footer"
 import "@/styles/globals.css"
+import DarkModeToggle from "@/components/DarkMode/DarkModeToggle"
 // import url'https://fonts.googleapis.com/css2?family=Amiri&family=Caprasimo&family=Jomhuria&family=Open+Sans:wght@300&display=swap';
 
 function MyApp({ Component, pageProps }) {

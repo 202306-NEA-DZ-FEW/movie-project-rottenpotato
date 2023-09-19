@@ -15,14 +15,22 @@ const MemberCard = ({ name, githubLink, linkedinLink, imageSrc }) => {
       </div>
 
       <div className="flex flex-rows items-center justify-between space-x-4 mt-4">
-        <a href={githubLink} target="_blank" className="text-YellowPotato">
+        <a
+          href={githubLink}
+          target="_blank"
+          className="text-black dark:text-YellowPotato"
+        >
           <FaGithub style={{ fontSize: "30px" }} />
         </a>
-        <a href={linkedinLink} target="_blank" className="text-YellowPotato">
+        <a
+          href={linkedinLink}
+          target="_blank"
+          className="text-black dark:text-YellowPotato"
+        >
           <FaLinkedin style={{ fontSize: "30px" }} />
         </a>
       </div>
-      <div className="text-YellowPotato font-bold font-lato flex justify-center pt-[10px] my-4">
+      <div className="text-black dark:text-YellowPotato font-bold font-lato flex justify-center pt-[10px] my-4">
         {name}
       </div>
     </div>

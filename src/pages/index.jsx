@@ -4,10 +4,10 @@ import React, { useState } from "react"
 import fetcher from "@/utils/API"
 import CarouselMovie from "@/components/carouselMovie/CarouselMovie"
 import { FiArrowRight } from "react-icons/fi"
-import MoviesIndex from "@/components/MoviesIndex"
 import TrailerModal from "@/components/moviepage/TrailerModal"
-import ActorsIndex from "@/components/ActorsIndex"
-import TvIndex from "@/components/TvIndex.jsx"
+import ActorsIndex from "@/components/Index/ActorsIndex"
+import TvIndex from "@/components/Index/TvIndex.jsx"
+import MoviesIndex from "@/components/Index/MoviesIndex"
 
 export default function Home({ trendingMovies, topRated, people, series }) {
   console.log("people", people)

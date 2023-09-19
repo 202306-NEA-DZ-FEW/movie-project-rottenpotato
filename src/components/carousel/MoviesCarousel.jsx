@@ -1,6 +1,6 @@
 import React from "react"
 import Carousel from "better-react-carousel"
-import MovieCard from "../MovieCard"
+import MovieCard from "../Cards/MovieCard"
 
 function MoviesCarousel({
   items,

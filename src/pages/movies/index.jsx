@@ -1,5 +1,5 @@
 import React from "react"
-import MovieList from "@/components/MovieList"
+import MovieList from "@/components/MovieList/MovieList"
 
 import fetcher from "@/utils/API"
 export default function Movies({ latestMovie, pageTitle }) {

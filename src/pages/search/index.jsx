@@ -3,8 +3,8 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import fetcher from "@/utils/API"
-import MovieCard from "@/components/MovieCard"
-import ActorCard from "@/components/ActorCard/ActorCard"
+import MovieCard from "@/components/Cards/MovieCard"
+import ActorCard from "@/components/Cards/ActorCard"
 
 export default function Search() {
   const router = useRouter()

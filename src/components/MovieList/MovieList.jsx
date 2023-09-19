@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
-import MovieCard from "@/components/MovieCard"
-import Pagination from "@/components/Pagination"
-import NavBar from "@/components/NavBar"
+import Pagination from "@/components/Pagination/Pagination"
 
 const MovieList = ({ latestMovie, pageTitle }) => {
   const moviesPerPage = 20

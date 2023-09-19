@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import DarkModeToggle from "../DarkModeToggle"
+import DarkModeToggle from "../DarkMode/DarkModeToggle"
 
 import { AiOutlineHome } from "react-icons/ai"
 import { PiVideoCameraBold } from "react-icons/pi"

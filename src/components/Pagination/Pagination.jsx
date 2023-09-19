@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ReactPaginate from "react-paginate"
-import MovieCard from "@/components/MovieCard"
+import MovieCard from "@/components/Cards/MovieCard"
 import { BsCaretLeftFill } from "react-icons/bs"
 import { BsCaretRightFill } from "react-icons/bs"
 import { useRouter } from "next/router"

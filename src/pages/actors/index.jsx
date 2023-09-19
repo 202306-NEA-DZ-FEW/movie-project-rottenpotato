@@ -1,9 +1,8 @@
 import React from "react"
 import fetcher from "@/utils/API"
-import ActorCard from "@/components/ActorCard/ActorCard"
+import ActorCard from "@/components/Cards/ActorCard"
 
 function Actors({ peopleData }) {
-  console.log(peopleData)
   return (
     <main className="font-semibold bg-DarkWhite dark:bg-black text-gray-800 dark:text-white w-full flex flex-col md:flex-row flex-wrap justify-around">
       <div className="w-full flex flex-col overflow-hidden px-4 mb-2">

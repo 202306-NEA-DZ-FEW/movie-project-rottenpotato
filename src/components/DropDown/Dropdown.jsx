@@ -47,7 +47,7 @@ export default function Dropdown({ title, data, page, theme }) {
         } "z-10  absolute divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"`}
       >
         <ul
-          className="rounded-lg py-2 text-sm z-10 bg-SilverWhite dark:bg-gray-800 text-gray-800 dark:text-white absolute dropdown"
+          className="rounded-lg py-2 text-sm z-10 bg-SilverWhite dark:bg-gray-600 text-gray-800 dark:text-white absolute dropdown"
           aria-labelledby="dropdownDefaultButton"
         >
           {data &&

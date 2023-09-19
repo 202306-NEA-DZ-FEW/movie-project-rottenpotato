@@ -1,7 +1,7 @@
 import React from "react"
 import Carousel from "better-react-carousel"
-import MovieCard from "../MovieCard"
-import ActorCard from "../ActorCard/ActorCard"
+import MovieCard from "../Cards/MovieCard"
+import ActorCard from "../Cards/ActorCard"
 
 function ActorsCarousel({ items }) {
   const carouselContainer = {

@@ -1,12 +1,12 @@
 import React from "react"
-import MemberCard from "../components/memberCard"
+import MemberCard from "../Cards/memberCard"
 
-import fella from "../images/Fella_Kettani_Algeria_2023.jpg"
-import med from "../images/IMG_20220710_202325.jpg"
-import sorour from "../images/377864338_855637669296184_2524052400789780379_n.png"
-import abdel from "../images/ghani_pic_compressed.jpg"
-import amel from "../images/WhatsApp Image 2023-09-17 à 19.23.39.jpg"
-import chanel from "../images/000.jpg"
+import fella from "../../images/Fella_Kettani_Algeria_2023.jpg"
+import med from "../../images/IMG_20220710_202325.jpg"
+import sorour from "../../images/377864338_855637669296184_2524052400789780379_n.png"
+import abdel from "../../images/ghani_pic_compressed.jpg"
+import amel from "../../images/WhatsApp Image 2023-09-17 à 19.23.39.jpg"
+import chanel from "../../images/000.jpg"
 
 const Footer = () => {
   //  this is an array of team members
@@ -51,15 +51,15 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-[#0b0b0b] pt-32 h-[225px]">
+    <footer className="bg-OrangeWhite dark:bg-[#0b0b0b] pt-32 h-[225px]">
       <div className="container mx-auto  px-4 flex-cols md:grid-cols-2 lg:flex lg:flex-rows h-full flex justify-around items-center">
         {teamMembers.map((member, index) => (
           <MemberCard key={index} {...member} />
         ))}
       </div>
-      <footer className="bg-[#0b0b0b] py-8">
+      <footer className="bg-OrangeWhite dark:bg-[#0b0b0b] py-8">
         {/* Footer copyright content */}
-        <p className="text-[#f8b31982] text-center mt-24">
+        <p className="text-gray-800 dark:text-[#f8b31982] text-center mt-24">
           &copy; {new Date().getFullYear()} Rotten Potato. All Rights Reserved.
         </p>
       </footer>
