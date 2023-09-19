@@ -47,7 +47,7 @@ export default function SideBar({ fullSideBar }) {
     <div
       className={`${
         isFull ? "w-64" : "w-32"
-      } transition-all duration-300 ease-out`}
+      } transition-all duration-300 ease-out z-30`}
     >
       <div className="container pl-16  ">
         <div

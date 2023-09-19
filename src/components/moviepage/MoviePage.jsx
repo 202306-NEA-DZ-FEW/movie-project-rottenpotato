@@ -10,6 +10,7 @@ import { useState } from "react"
 
 export default function MoviePage({ movie, trailer, director }) {
   const [showModal, setShowModal] = useState(false)
+  const alter = { key: "dQw4w9WgXcQ" }
   function runtime() {
     let runtime = "N/A"
     if (movie.runtime < 60) {
@@ -54,7 +55,7 @@ export default function MoviePage({ movie, trailer, director }) {
     return stars
   }
   return (
-    <div className="w-full h-full flex justify-center items-center z-20 relative">
+    <div className="w-full h-full flex justify-center items-center  relative">
       <div className="grid grid-rows-[80%_20%] grid-cols-[60%_40%] bg-[rgba(0,0,0,.4)] w-3/4 rounded-lg p-5">
         <div className="flex-grow p-4 row-start-1 col-start-1">
           <h1 className="text-6xl font-semibold text-YellowPotato mb-6 ">
@@ -132,8 +133,8 @@ export default function MoviePage({ movie, trailer, director }) {
       <TrailerModal
         setShowModal={setShowModal}
         showModal={showModal}
-        trailerKey={trailer[0].key}
-        name={trailer[0].name}
+        trailerKey={trailer && trailer[0] ? trailer[0].key : alter}
+        name={trailer && trailer[0] ? trailer[0].name : "Default Name"}
       />
     </div>
   )

@@ -26,8 +26,8 @@ function MyApp({ Component, pageProps }) {
           <title>Rotten Potato</title>
         </Head>
         <NavBar />
-        <div className=" flex flex-row-reverse justify-between bg-DarkWhite dark:bg-black">
-          <div className="w-full ml-12">
+        <div className=" flex flex-row-reverse justify-end bg-DarkWhite dark:bg-black">
+          <div className="w-3/4 grow ">
             <Component {...pageProps} />
           </div>
           <div className=" h-auto rounded-l bg-DarkWhite dark:bg-black text-black dark:text-white pt-8">
