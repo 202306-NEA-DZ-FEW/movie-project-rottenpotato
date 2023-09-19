@@ -16,6 +16,7 @@ const MoviesIndex = ({ movies }) => {
           className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 justify-center"
         >
           <MovieCard
+            genres={movie.genre_ids}
             title={movie.title}
             poster_path={movie.poster_path}
             vote_average={movie.vote_average}

@@ -6,6 +6,7 @@ import { BsCaretRightFill } from "react-icons/bs"
 import { useRouter } from "next/router"
 
 const Pagination = ({ totalItems, itemsPerPage }) => {
+  console.log("total", totalItems)
   const router = useRouter()
   console.log("routerr", router)
   const path = router.asPath
@@ -31,7 +32,9 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
       <div className="flex flex-wrap gap-6">
         {totalItems.map((movie, index) => (
           <div key={index} className="">
+            {console.log("lovie", movie)}
             <MovieCard
+              genres={movie.genre_ids}
               movie_id={movie.id}
               key={movie.id}
               title={movie.title}

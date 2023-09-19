@@ -28,6 +28,7 @@ export default function Search() {
     searchResults.results &&
     searchResults.results.map((movie) => (
       <MovieCard
+        genres={movie.genre_ids}
         movie_id={movie.id}
         key={movie.id}
         title={movie.title}
@@ -41,7 +42,9 @@ export default function Search() {
       <ActorCard key={person.id} person={person} />
     ))
   const loading = (
-    <span className="font-bold text-5xl text-YellowPotato">Loading...</span>
+    <span className="font-bold text-5xl animate-pulse text-YellowPotato">
+      Loading...
+    </span>
   )
 
   return (
