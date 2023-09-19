@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import DarkModeToggle from "../DarkModeToggle"
 
 import { AiOutlineHome } from "react-icons/ai"
@@ -37,16 +37,22 @@ const menuNavigationList = [
 export default function SideBar({ fullSideBar }) {
   const [currentLink, setCurrentLink] = useState("home")
   const [isFull, setIsFull] = useState(fullSideBar)
+
+  useEffect(() => {
+    setIsFull(fullSideBar)
+  }, [fullSideBar])
+
+  console.log("fuuuuull", fullSideBar, isFull)
   return (
     <div
       className={`${
-        isFull ? "w-64 " : "w-32"
+        isFull ? "w-64" : "w-32"
       } transition-all duration-300 ease-out`}
     >
       <div className="container pl-16  ">
         <div
           className={`hamburger  transition-all duration-300 ease-out flex ${
-            isFull ? "ml-0" : "ml-0"
+            isFull ? "ml-40" : "ml-0"
           } mb-8 ${fullSideBar ? "hidden" : ""}`}
           onClick={() => setIsFull(!isFull)}
         >
@@ -60,11 +66,10 @@ export default function SideBar({ fullSideBar }) {
         {/*  */}
 
         <div className="navigations">
-          {isFull && (
-            <div className="dark-mode-toggle mb-8">
-              <DarkModeToggle />
-            </div>
-          )}
+          <div className="dark-mode-toggle mb-8  mt-12">
+            <DarkModeToggle isFull={isFull} />
+          </div>
+
           <div className="nav-items">
             <h3
               className={`${
@@ -103,6 +108,7 @@ export default function SideBar({ fullSideBar }) {
                   currentLink={currentLink}
                   setCurrentLink={setCurrentLink}
                   isFull={isFull}
+                  page="movies"
                 />
               ))}
             </ul>
