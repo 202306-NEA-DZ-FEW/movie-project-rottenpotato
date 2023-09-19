@@ -1,21 +1,21 @@
 import React from "react"
-import MovieCard from "@/components/MovieCard"
 import { FiArrowRight } from "react-icons/fi"
 import Link from "next/link"
+import MovieCard from "@/components/MovieCard"
 
-const MoviesIndex = ({ movies }) => {
+const ActorsIndex = ({ series }) => {
   return (
     <div className=" flex flex-col mb-2 mx-12">
       <h1 className="text-2xl font-bold text-YellowPotato flex justify-start p-2">
-        Top Rated:
+        Airing Today:
       </h1>
       <hr className="border-YellowPotato border-t-2 w-11/12 ml-2 mb-8" />
-      <div className="w-full overflow-hidden flex flex-col flex-wrap md:grid grid-cols-2 lg:flex-row lg:flex ">
-        {movies.map((movie, index) => (
+      <div className="w-full overflow-hidden flex-col flex-wrap md:grid grid-cols-2 lg:flex-row lg:flex">
+        {series.map((movie, index) => (
           <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <MovieCard
               genres={movie.genre_ids}
-              title={movie.title}
+              title={movie.name}
               poster_path={movie.poster_path}
               vote_average={movie.vote_average}
             />
@@ -33,4 +33,4 @@ const MoviesIndex = ({ movies }) => {
   )
 }
 
-export default MoviesIndex
+export default ActorsIndex

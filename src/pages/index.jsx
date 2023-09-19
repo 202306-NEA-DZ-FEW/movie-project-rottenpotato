@@ -6,8 +6,11 @@ import CarouselMovie from "@/components/carouselMovie/CarouselMovie"
 import { FiArrowRight } from "react-icons/fi"
 import MoviesIndex from "@/components/MoviesIndex"
 import TrailerModal from "@/components/moviepage/TrailerModal"
+import ActorsIndex from "@/components/ActorsIndex"
+import TvIndex from "@/components/TvIndex.jsx"
 
-export default function Home({ trendingMovies, topRated }) {
+export default function Home({ trendingMovies, topRated, people, series }) {
+  console.log("people", people)
   const carouselContainer = {
     width: "99%",
     maxWidth: "900px",
@@ -47,6 +50,8 @@ export default function Home({ trendingMovies, topRated }) {
         ))}
       </Carousel>
       <MoviesIndex movies={topRated} />
+      <TvIndex series={series} />
+      <ActorsIndex people={people} />
     </main>
   )
 }
@@ -54,8 +59,12 @@ export default function Home({ trendingMovies, topRated }) {
 export async function getServerSideProps() {
   const Data = await fetcher("trending/movie/day")
   const trendingMovies = Data.results.slice(0, 3)
-  const topRated = Data.results.slice(0, 8)
+  const topRated = Data.results.slice(0, 4)
+  const peopleData = await fetcher("person/popular")
+  const people = peopleData.results.slice(0, 4)
+  const tv = await fetcher("tv/airing_today")
+  const series = tv.results.slice(0, 4)
   return {
-    props: { trendingMovies, topRated },
+    props: { trendingMovies, topRated, people, series },
   }
 }
