@@ -7,7 +7,7 @@ const ActorsIndex = ({ people }) => {
   return (
     <div className=" flex flex-col mb-2 mx-12">
       <h1 className="text-2xl font-bold text-YellowPotato flex justify-start p-2">
-        Populat this week:
+        Popular this week:
       </h1>
       <hr className="border-YellowPotato border-t-2 w-11/12 ml-2 mb-8" />
       <div className="w-full overflow-hidden flex flex-col flex-wrap md:grid grid-cols-2 lg:flex-row lg:flex">
