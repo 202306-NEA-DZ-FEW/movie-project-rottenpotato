@@ -33,12 +33,14 @@ const NavBar = () => {
   return (
     <nav className="bg-OrangeWhite dark:bg-Licorice text-gray-800 dark:text-white p-2 h-auto rounded-l ">
       <div className="my-2 flex w-full justify-between align-baseline">
-        <div className="logo flex ml-12">
-          <Image src={logo} width={48} height={48} alt="logo image" />
-          <span className="font-lucky text-YellowPotato w-32 text-[2rem] uppercase leading-8 ml-2">
-            Rotten Potato
-          </span>
-        </div>
+        <Link href="/" passHref className="">
+          <div className="logo flex ml-12">
+            <Image src={logo} width={48} height={48} alt="logo image" />
+            <span className="font-lucky text-YellowPotato w-32 text-[2rem] uppercase leading-8 ml-2">
+              Rotten Potato
+            </span>
+          </div>
+        </Link>
 
         <div className="text-2xl flex gap-8 font-normal tracking-wider mt-2">
           <Link href="/" passHref className="py-2">
@@ -82,7 +84,7 @@ const NavBar = () => {
               type="search"
               id="default-search"
               className="block w-full p-3 pl-10 mt-2 text-sm text-black dark:text-SilverWhite rounded-lg bg-DarkWhite dark:bg-[#58585a] border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Search Mockups, Logos..."
+              placeholder="Search Movie,Actors..."
               required
             />
           </div>

@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar"
 import { useRouter } from "next/router"
 import { ThemeProvider } from "next-themes"
 import React, { useEffect } from "react"
+import Head from "next/head"
 import DarkModeToggle from "@/components/DarkModeToggle"
 import Footer from "../components/Footer"
 import "@/styles/globals.css"
@@ -21,6 +22,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <div className=" h-fit bg-DarkWhite dark:bg-black text-black dark:text-white">
+        <Head>
+          <title>Rotten Potato</title>
+        </Head>
         <NavBar />
         <div className=" flex flex-row-reverse justify-between bg-DarkWhite dark:bg-black">
           <div className="w-full ml-12">
