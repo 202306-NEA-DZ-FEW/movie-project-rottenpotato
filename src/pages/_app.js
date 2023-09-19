@@ -28,9 +28,9 @@ function MyApp({ Component, pageProps }) {
           </div>
           <div className=" h-auto rounded-l bg-DarkWhite dark:bg-black text-black dark:text-white pt-8">
             <SideBar fullSideBar={fullSideBar} />
-            {/* <Footer /> */}
           </div>
         </div>
+        <Footer />
       </div>
     </ThemeProvider>
   )

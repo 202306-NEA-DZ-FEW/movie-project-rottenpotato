@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-const DarkModeToggle = () => {
+const DarkModeToggle = ({ isFull }) => {
   const [darkMode, setDarkMode] = useState(false)
   const [dotPosition, setDotPosition] = useState(0)
 
@@ -25,13 +25,7 @@ const DarkModeToggle = () => {
   }
 
   return (
-    <div className="flex items-center space-x-2">
-      <label
-        htmlFor="dark-mode-toggle"
-        className="text-gray-800 dark:text-white"
-      >
-        Dark Mode
-      </label>
+    <div className="flex items-center space-x-2 relative">
       <div
         className={`w-10 h-5 rounded-full bg-gray-300 dark:bg-gray-600 p-1 flex items-center cursor-pointer relative`}
         onClick={handleToggle}
@@ -41,6 +35,15 @@ const DarkModeToggle = () => {
           style={dotStyle}
         ></div>
       </div>
+
+      <label
+        htmlFor="dark-mode-toggle"
+        className={`absolute left-10 text-gray-800 dark:text-white transition-all ease-linear ${
+          !isFull ? "scale-0" : "scale-100"
+        }`}
+      >
+        Dark Mode
+      </label>
     </div>
   )
 }
