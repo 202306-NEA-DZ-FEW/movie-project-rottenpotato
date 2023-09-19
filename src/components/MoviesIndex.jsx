@@ -5,29 +5,31 @@ import Link from "next/link"
 
 const MoviesIndex = ({ movies }) => {
   return (
-    <div className="flex flex-wrap p-6">
-      <h1 className="text-2xl  font-bold text-YellowPotato flex justify-end p-2">
+    <div className=" flex flex-col mb-2 mx-12">
+      <h1 className="text-2xl font-bold text-YellowPotato flex justify-start p-2">
         Top Rated:
       </h1>
-      <div className=" w-11/12 ml-2 border-b-2 border-YellowPotato mb-4"></div>
-      {movies.map((movie, index) => (
-        <div
-          key={index}
-          className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 justify-center"
-        >
-          <MovieCard
-            title={movie.title}
-            poster_path={movie.poster_path}
-            vote_average={movie.vote_average}
-          />
-        </div>
-      ))}
-      <Link href="movies?type=top_rated">
-        <h1 className="text-l font-bold text-gray-800 dark:text-white flex justify-end pr-32 pb-6 items-center hover:text-YellowPotato dark:hover:text-YellowPotato ">
-          View More <FiArrowRight className="mt-1 ml-1" />
-        </h1>
-      </Link>
+      <hr className="border-YellowPotato border-t-2 w-11/12 ml-2 mb-8" />
+      <div className="w-full overflow-hidden flex flex-wrap  ">
+        {movies.map((movie, index) => (
+          <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+            <MovieCard
+              title={movie.title}
+              poster_path={movie.poster_path}
+              vote_average={movie.vote_average}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="relative bottom-0 mr-8 pb-4 right-0">
+        <Link href="movies?type=top_rated">
+          <h1 className="text-l font-bold text-gray-800 dark:text-white flex justify-end items-center hover:text-YellowPotato dark:hover:text-YellowPotato ">
+            View More <FiArrowRight className="mt-1 ml-1" />
+          </h1>
+        </Link>
+      </div>
     </div>
   )
 }
+
 export default MoviesIndex

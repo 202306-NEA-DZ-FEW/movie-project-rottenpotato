@@ -29,7 +29,7 @@ function SingleActor({ actor, movies }) {
           }
           alt={actor.name}
         />
-        <h3 className="text-YellowPotato  text-center font-semibold text-2xl ">
+        <h3 className="text-black dark:text-white text-center font-light text-s ">
           Popularity: {actor.popularity}{" "}
         </h3>
       </div>
@@ -72,12 +72,11 @@ function SingleActor({ actor, movies }) {
           </h3>
         </span>
         <span className="flex flex-col items-start justify-center">
-          <h3 className="text-YellowPotato font-semibold text-2xl ">
+          <h3 className="text-black dark:text-white font-semibold text-2xl ">
             Biography
           </h3>
-          <p className=" font-normal text-lg border border-YellowPotato rounded-md p-2">
-            {actor.biography}
-          </p>
+          <hr className="border-YellowPotato border-t-2 w-11/12 mr-16 mt-3 mb-4" />
+          {actor.biography}
         </span>
       </div>
       <div className="row-start-2 col-start-1 col-span-2 ">
