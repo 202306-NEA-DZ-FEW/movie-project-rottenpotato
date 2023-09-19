@@ -41,6 +41,7 @@ Want to join the movie party? We'd love your help! Follow our contributing guide
 ## Project Management
 
 We utilized the GitHub Issues tab for project task management and followed the Git Workflow. This approach helped us organize tasks, reduce conflicts, and demonstrate our Git proficiency.
+![GITHUB WorkFlow](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/blob/readme/Github%20WorkFlow.PNG?raw=true)
 
 ## Our Movie-Making Arsenal 🎬🔧:
 
