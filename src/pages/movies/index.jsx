@@ -19,7 +19,7 @@ export async function getServerSideProps(context) {
   let pageTitle = ""
   if (type) {
     if (type === "latest") {
-      url = "movie/" + type + "?language=en-US"
+      url = "movie/" + type
     } else {
       url = "movie/" + type + "?language=en-US&page=" + parsedPage
     }
@@ -39,7 +39,7 @@ export async function getServerSideProps(context) {
       console.log("dataaaaaaaaaaaaaaaaaaaaaaaa", data)
       if (data.results || data) {
         if (type === "latest") {
-          allMovies = [data]
+          allMovies = [...data]
         } else {
           allMovies = [...data.results]
         }
