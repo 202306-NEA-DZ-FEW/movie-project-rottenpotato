@@ -14,6 +14,7 @@ const MoviesIndex = ({ movies }) => {
         {movies.map((movie, index) => (
           <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <MovieCard
+              movie_id={movie.id}
               genres={movie.genre_ids}
               title={movie.title}
               poster_path={movie.poster_path}

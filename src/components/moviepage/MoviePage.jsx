@@ -54,7 +54,7 @@ export default function MoviePage({ movie, trailer, director }) {
     return stars
   }
   return (
-    <div className="w-full h-full flex justify-center items-center ">
+    <div className="w-full h-full flex justify-center items-center z-20 relative">
       <div className="grid grid-rows-[80%_20%] grid-cols-[60%_40%] bg-[rgba(0,0,0,.4)] w-3/4 rounded-lg p-5">
         <div className="flex-grow p-4 row-start-1 col-start-1">
           <h1 className="text-6xl font-semibold text-YellowPotato mb-6 ">

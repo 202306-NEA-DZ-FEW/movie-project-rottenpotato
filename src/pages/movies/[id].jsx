@@ -25,7 +25,7 @@ export default function Movie({
         <img
           src={`https://image.tmdb.org/t/p/w500${movieData.backdrop_path}`}
           alt=""
-          className="-z-10 absolute top-0 bg-blend-overlay backdrop-blur-3xl bottom-0 left-0 right-0 w-full h-full"
+          className="z-10 absolute top-0 bg-blend-overlay backdrop-blur-3xl bottom-0 left-0 right-0 w-full h-full"
         />
         <MoviePage
           movie={movieData}

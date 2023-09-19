@@ -33,7 +33,8 @@ function MoviesCarousel({
           className=" mx-auto h-fit p-4 gap-0 bg-white"
         >
           <MovieCard
-            genres={movie.genre_ids}
+            movie_id={item.id}
+            genres={item.genre_ids}
             title={item.title}
             poster_path={item.poster_path}
             vote_average={item.vote_average}
