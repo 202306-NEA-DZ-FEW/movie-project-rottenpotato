@@ -1,6 +1,7 @@
 # Rotten🥔 Potato - Movie Website
 
 Welcome to the Rotten Potatos Movie Webpage, where the world of movies meets your fingertips! 🍿🎥
+
 ![Website pges](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/assets/138016246/83bc57cf-7876-4243-a507-b7a64a61fb7e)
 
 
