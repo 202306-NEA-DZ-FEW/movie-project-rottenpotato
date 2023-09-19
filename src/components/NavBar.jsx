@@ -46,8 +46,8 @@ const NavBar = () => {
           <Link href="/" passHref className="py-2">
             HOME
           </Link>
-          <Dropdown title={"MOVIES"} data={movieLibrary} page={"movies/"} />
-          <Dropdown title={"GENRE"} data={movieGenres} page={"movies/"} />
+          <Dropdown title={"MOVIES"} data={movieLibrary} page={"/movies/"} />
+          <Dropdown title={"GENRE"} data={movieGenres} page={"/movies/"} />
           <Dropdown title={"TV"} data={tvGenres} page={"shows/"} />
           <Link href="/actors" passHref className="py-2">
             ACTORS
