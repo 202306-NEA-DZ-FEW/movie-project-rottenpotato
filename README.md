@@ -1,6 +1,8 @@
 # Rotten🥔 Potato - Movie Website
 
 Welcome to the Rotten Potatos Movie Webpage, where the world of movies meets your fingertips! 🍿🎥
+![Website pges](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/assets/138016246/83bc57cf-7876-4243-a507-b7a64a61fb7e)
+
 
 With a dash of Next.js and a sprinkle of Tailwind CSS, we've whipped up a modern movie hub that's as fun as it is informative. Our mission? To serve you everything from movie trailers and ratings to actors' secrets—all while perfecting our skills in Next.js, Tailwind CSS, and awesome project management.
 
@@ -41,8 +43,7 @@ Want to join the movie party? We'd love your help! Follow our contributing guide
 ## Project Management
 
 We utilized the GitHub Issues tab for project task management and followed the Git Workflow. This approach helped us organize tasks, reduce conflicts, and demonstrate our Git proficiency.
-![GITHUB WorkFlow](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/blob/readme/Github%20WorkFlow.PNG?raw=true)
-
+![GITHUB WorkFlow](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/blob/readme/mind_map.png?raw=true)
 ## Our Movie-Making Arsenal 🎬🔧:
 
 - **React**: Our secret ingredient for crafting dynamic and mesmerizing web pages. 🪄
