@@ -76,6 +76,6 @@ For the inside scoop, visit us on 🌟GitHub! You can also slide into our DMs vi
 - Fella Kettani: https://github.com/fketta
 - Mohammed Benaceur: https://github.com/medshk
 - Sorour Rahem: https://github.com/rahemSorour
-- Chanel: 
+- Chanel: https://github.com/Chanel50
 
 Let's keep the movie chat rolling! 🥔🎉
