@@ -1,6 +1,6 @@
 import React from "react"
 
-function TrailerModal({ showModal, setShowModal, trailerKey = null, name }) {
+function TrailerModal({ showModal, setShowModal, trailerKey, name }) {
   console.log("key", trailerKey)
   const no_video = (
     <div className="w-1/2 aspect-square rounded-lg h-1/2">
