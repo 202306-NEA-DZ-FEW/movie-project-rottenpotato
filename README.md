@@ -10,7 +10,7 @@ With a dash of Next.js and a sprinkle of Tailwind CSS, we've whipped up a modern
 As avid movie buffs, we've crafted this site for fellow enthusiasts. 'Rotten Potato' takes inspiration from the legendary Rotten Tomatoes and serves up the latest movies, top-rated flicks, beloved actors, and more! 🌟 We've even partnered with The Movie Database (TMDb) API to ensure you get the juiciest movie details.
 
 So, grab your popcorn, kick back, and let's dive into the world of cinema together! 🎬🥔
-Deployed website: [click here](movie-project-rottenpotato.vercel.app)
+Deployed website: [click here]([movie-project-rottenpotato.vercel.app](https://movie-project-rottenpotato.vercel.app/))
 
 ## Core Components
 
