@@ -111,8 +111,8 @@ export default function MoviePage({ movie, trailer, director }) {
           />
         </div>
 
-        <div className="w-full flex flex-row items-center justify-around gap-3 p-0 rounded-md max-w-full flex-wrap bg-[rgba(255,255,255,.5)] mt-6 row-start-2 col-start-1 col-span-2 ">
-          {movie.production_companies.map((company) => (
+        <div className="w-full flex flex-row items-center justify-around gap-3 p-0 rounded-md max-w-full flex-wrap bg-[rgba(255,255,255,.5)] mt-10 row-start-2 col-start-1 col-span-2 ">
+          {movie.production_companies.map((company) => 
             <div key={company.id} className="flex flex-col items-center">
               <img
                 src={
