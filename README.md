@@ -1,59 +1,83 @@
-# Movie Project
+# [Rotten🥔 Potato - Movie Website](https://movie-project-rottenpotato.vercel.app/)
 
-## Overview
+Welcome to the [Rotten Potato](https://movie-project-rottenpotato.vercel.app/) Movie Webpage, where the world of movies meets your fingertips! 🍿🎥
 
-Working with APIs to make our websites interactive sits at the core of frontend web development. At the end, frontend websites work as interfaces that give us the ability to interace with data. All this data is coming from some form of an API.
+![Website pges](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/assets/138016246/83bc57cf-7876-4243-a507-b7a64a61fb7e)
 
-The API you will be interacting with is a movie API that can be used to retreive information about movies and actors. It is quite extensive and serves many purposes for your needs. In addition to that, it has quite a versatile searching mechanism that gives you the ability to reach for the information you need.
 
-## How to make use of this WIKI?
+With a dash of Next.js and a sprinkle of Tailwind CSS, we've whipped up a modern movie hub that's as fun as it is informative. Our mission? To serve you everything from movie trailers and ratings to actors' secrets—all while perfecting our skills in Next.js, Tailwind CSS, and awesome project management.
 
-As you can see, the only thing you received from us is a bunch of `.md` (Markdown) files like the one you're reading now. We want you to learn to build your own projects from scratch and see how the process is done. So, we have created the following things in the wiki to help you out with the preparation:
+As avid movie buffs, we've crafted this site for fellow enthusiasts. 'Rotten Potato' takes inspiration from the legendary Rotten Tomatoes and serves up the latest movies, top-rated flicks, beloved actors, and more! 🌟 We've even partnered with The Movie Database (TMDb) API to ensure you get the juiciest movie details.
 
-1. Setup - This page contains the steps you need to setup the project. **Only one of you will do it, while the others watch and support them**
-2. Requirements - This page contains the requirements that you need to do for the project.
-3. Presentation - This page contains the requirements that you need to do when presenting.
-4. Score guide - We're introducing a new score system. This page contains the breakdown of the score.
+So, grab your popcorn, kick back, and let's dive into the world of cinema together! 🎬🥔
 
-To make the best use of this Wiki, go first to the requirements, understand them, then go to the score guide, understand it, then finally head to the setup page so you can do the setup with everything in mind.
+Deployed website: [click here](https://movie-project-rottenpotato.vercel.app/)
 
-## Key takeaways 🎉
+## Core Components
 
-If you finish this project you can be absolutely sure that you can work on any project in the future. Generally, you will be able to use the same tools and techniques you used here to build any website in the future.
+- **Navbar**: Our trusty guide, always there to whisk you to different sections.
+- **Logo**: The spud-tacular "Rotten Potato" logo, our website's quirky emblem.
+- **Genres**: Get ready to explore! Pick your movie genre from a dropdown menu, powered by the TMDb API.
+- **Movies**: Another dropdown with options like "Top Rated," "Popular," and more, leading you to dedicated movie pages.
+- **Actors**: The VIP pass to our Actors page, featuring the crème de la crème of Hollywood.
+- **Search Box**: Lost in the movie maze? Just type a name, and it'll light the way!
+- **Footer**: Our credits roll on every page, giving a nod to our amazing team, complete with GitHub and LinkedIn links.
 
-#### Things you will practice while working on this project
+## Pages
 
-You will be able to practice:
+- **Home Page**: Your gateway to the latest movies. Click, and you're on your way to the Single Movie Page.
+- **Movies Page**: The treasure chest of movies. Find your gem, click, and voilà, the Single Movie Page awaits!
+- **Single Movie Page**: Dive deep into the movie's world. Poster, title, release date, and a lot more! Follow actors or related movies for more juicy details.
+- **Actors Page**: All the stars are here! Click an actor, and you're off to the Single Actor Page.
+- **Single Actor Page**: It's all about the actors! Pics, names, birthdays, and even a bonus round of movies they've aced!
+- **Search Page**: Lost in the movie jungle? Find your way with our powerful search page! Enter a movie or actor's name, and let the magic happen.
 
-- Dividing tasks as components between the team and avoiding most conflict issues.
-- Using states and setters to change the state of the component.
-- Using props to pass data from one component to another.
-- Using static-site generation and server-side rendering to fetch data and add them to pages.
-- Preparing folder structure in a way that makes your, and everyone elses work easier.
-- Adding new dependencies and how to use them.
-- Reading the documentation of the packages you use.
-- Reading the documentation of APIs and how to understand them.
-- Using Authentication tokens in your
-- Using routes to navigate between pages.
-- Using local storage to store information.
-- Using UI Kits to make styling components easier.
 
-#### Concerns to avoid
+## Bonus Features
 
-The following thoughts are traps; steer away from them:
+- **Dark Mode**: Switch to the dark side for a comfy browsing experience.
+- **Sidebar**: Navigate with ease using the handy sidebar.
+- **Pagination**: Flip through movie listings effortlessly.
 
-- *`This project is huge! I don't think I'm going to be able to do it.`* From your previous experiences, you know for a fact that everything starts big in the beginning but when you plan things and work on them they usually are not as big and scary as you thought.
-- *`I don't know how to use [insert tool here] how am I going to deal with all of this?`* Again, don't worry. You have dealt with so many unknown things and just like you learned how to use them, you will be able to learn how to use any tool you want as long as you check its documentation.
-- *`[Right from the beginning] How am I going to fix the bonus topic?`* DON'T GO THERE UNLESS YOU FINISH THE MAIN REQUIREMENTS FIRST!
-- *`[After spending hours on an issue to fix it without reading the documentation or searching the issue on google] I will spend extra hours on this until I fix it`* This is a trap. You should always read the documentation and search for the solution.
-- *`I'm so tired now!!!😩 I've been trying to fix this bug for 3 hours!!!`* In times like these, consider steping away from your computer and doing something else like playing with your pet, watching something funny, looking outside your window and enjoying cool air.
+## Contributing
 
-#### Confidence boosters
+Want to join the movie party? We'd love your help! Follow our contributing guidelines, and let's make this movie night unforgettable! 🎬🥔✨
 
-In times of doubts remember these:
+## Project Management
 
-- *`This project will be a huge addition to my already big list of projects that will increase my future prospects of getting hired`*
-- *`The internet is FULL of resources that any one can use to learn about anything.`*
-- *`I've worked on 3 projects. They seemed difficult in the beginning but I still aced them. I'm awesome!`*
-- *`3 months ago, my biggest issues and worries are how to write the correct class name to change an HTML element's color. Now, I'm dealing with bigger things because I've learned so much more. My current worries and issues will be my HTML and CSS of my future.`*
-- *`I'm not alone on this team. There are 2 more people who got my back.`*
+We utilized the GitHub Issues tab for project task management and followed the Git Workflow. This approach helped us organize tasks, reduce conflicts, and demonstrate our Git proficiency.
+![GITHUB WorkFlow](https://github.com/202306-NEA-DZ-FEW/movie-project-rottenpotato/blob/readme/mind_map.png?raw=true)
+## Our Movie-Making Arsenal 🎬🔧:
+
+- **React**: Our secret ingredient for crafting dynamic and mesmerizing web pages. 🪄
+- **The Movie Database (TMDb) API**: The treasure trove of movie data that powered our website. 🎥💎
+- **Tailwind CSS**: The magical brush that added style and pizzazz to our design. ✨🎨
+- **GitHub**: Our virtual movie studio for project management and version control. 🎞️🚀
+
+With this cinematic toolbox, we brought "Rotten Potatos" to life! 🍿🥔✨
+
+## License
+
+No license, just pure movie magic! 🍿
+
+## Credits
+
+- **Team Members**: These movie buffs made it happen!
+- **Re:Coded**: The bootcamp that fueled our journey.
+
+## Acknowledgments
+
+A big round of applause to our superstar team members for bringing the Rotten Potatos Movie Website to life! 🌟🎥
+
+## Contact Us
+
+For the inside scoop, visit us on 🌟GitHub! You can also slide into our DMs via our GitHub profiles. 📬🎬:
+
+- Abdelghani Bahri: https://github.com/GhaniBahri
+- Amel Batouche: https://www.linkedin.com/in/batouche-amel-384422190/
+- Fella Kettani: https://github.com/fketta
+- Mohammed Benaceur: https://github.com/medshk
+- Sorour Rahem: https://github.com/rahemSorour
+- Chanel: https://github.com/Chanel50
+
+Let's keep the movie chat rolling! 🥔🎉

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+}
+
+.movie-card:hover .bg-overlay {
+  opacity: 0;
+}
+
+.movie-card:hover .movie-details {
+  opacity: 0;
+}
+
+.actor-card:hover .bg-overlay {
+  opacity: 0;
+}
+
+.actor-card:hover .actor-details {
+  opacity: 0;
+}
+
+.dropdown {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.dropdown {
+  font-size: 14px;
+}
+
+.light-mode-svg {
+  fill: rgb(31 41 55);
+}
+
+.dark-mode-svg {
+  fill: white;
+}
