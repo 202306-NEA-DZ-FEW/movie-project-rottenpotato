@@ -23,7 +23,7 @@ export default function SideBarNavItem({
       >
         <NavItemIcon className="w-6 h-6  text-yellow-400" />
         <label
-          className={`absolute left-3 text-yellow-400 text-lg ml-6 transition-all ease-linear ${
+          className={`absolute hidden sm:block left-3 text-yellow-400 text-lg ml-6 transition-all ease-linear ${
             !isFull ? "scale-0" : "scale-100"
           }`}
         >
@@ -39,7 +39,7 @@ export default function SideBarNavItem({
       >
         <NavItemIcon className="w-6 h-6" />
         <label
-          className={`absolute left-3 text-lg ml-6 transition-all ease-linear ${
+          className={`absolute hidden sm:block left-3 text-lg ml-6 transition-all ease-linear ${
             !isFull ? "scale-0" : "scale-100"
           }`}
         >

@@ -55,63 +55,65 @@ export default function MoviePage({ movie, trailer, director }) {
     return stars
   }
   return (
-    <div className="w-full h-full flex justify-center items-center  relative">
-      <div className="grid grid-rows-[80%_20%] grid-cols-[60%_40%] bg-[rgba(0,0,0,.4)] w-3/4 rounded-lg p-5">
-        <div className="flex-grow p-4 row-start-1 col-start-1">
-          <h1 className="text-6xl font-semibold text-YellowPotato mb-6 ">
-            {movie.title}
-          </h1>
-          <div className="text-white text-2xl mb-2">{movie.release_date}</div>
-          <div className="flex items-center text-white text-1xl ">
-            <BiTimeFive className="mx-1" /> {runtime()} |
-            <span className="ml-2 flex flex-row items-center gap-2">
-              <HiLanguage className="ml-2" /> {movie.original_language}
-            </span>
-          </div>
-          <div className="flex items-center text-yellow-500 mt-6 mb-6">
-            {renderStars()}
+    <div className="w-full h-full justify-center items-center  relative">
+      <div className="container sm:w-4/5 flex flex-col  mx-auto items-center">
+        <div className="flex bg-[rgba(0,0,0,.4)] w-full md:w-3/4  flex-col-reverse md:flex-row rounded-lg p-5">
+          <div className="flex-shrink">
+            <h1 className=" text-2xl md:text-6xl font-semibold text-YellowPotato mb-6 mt-4">
+              {movie.title}
+            </h1>
+            <div className="text-white text-2xl mb-2">{movie.release_date}</div>
+            <div className="flex items-center text-white text-1xl ">
+              <BiTimeFive className="mx-1" /> {runtime()} |
+              <span className="ml-2 flex flex-row items-center gap-2">
+                <HiLanguage className="ml-2" /> {movie.original_language}
+              </span>
+            </div>
+            <div className="flex items-center text-yellow-500 mt-6 mb-6">
+              {renderStars()}
 
-            <div className="text-white flex-shrink-0 ml-1">
-              {` | ${movie.vote_count} votes`}
+              <div className="text-white flex-shrink-0 ml-1">
+                {` | ${movie.vote_count} votes`}
+              </div>
             </div>
-          </div>
-          {/* <span className="text-white font-Lato text-25 font-semibold mb-16"> 10M+ views </span> */}
-          <div className="w-[500px]">
-            <p className=" text-white font-Lato text-30 font-semibold mb-9">
-              {movie.overview}
-            </p>
-          </div>
-          <div className="text-white mb-6">
-            <strong>Director</strong> : {director}
+            {/* <span className="text-white font-Lato text-25 font-semibold mb-16"> 10M+ views </span> */}
+            <div className="max-w-[500px]">
+              <p className=" text-white font-Lato  font-semibold mb-9 text-base">
+                {movie.overview}
+              </p>
+            </div>
+            <div className="text-white mb-6">
+              <strong>Director</strong> : {director}
+            </div>
+
+            <div className="flex mt-22">
+              <div>
+                <button className="bg-[rgba(255,255,255,.8)] text-black p-4 rounded-lg font-Lato text-22 font-extrabold leading-5 inline-flex items-center ">
+                  <AiFillPlusCircle className="mr-2" />
+                  Watch List
+                </button>
+              </div>
+              <div>
+                <button
+                  className="bg-yellow-500 text-white p-4 rounded-lg ml-4 font-Lato text-22 font-extrabold leading-5 items-center"
+                  onClick={() => setShowModal(true)}
+                >
+                  Watch Trailer
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="flex mt-22">
-            <div>
-              <button className="bg-[rgba(255,255,255,.8)] text-black p-4 rounded-lg font-Lato text-22 font-extrabold leading-5 inline-flex items-center ">
-                <AiFillPlusCircle className="mr-2" />
-                Watch List
-              </button>
-            </div>
-            <div>
-              <button
-                className="bg-yellow-500 text-white p-4 rounded-lg ml-4 font-Lato text-22 font-extrabold leading-5 items-center"
-                onClick={() => setShowModal(true)}
-              >
-                Watch Trailer
-              </button>
-            </div>
+          <div className=" rounded-xl overflow-hidden row-start-1 col-start-2 ">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt="picture image"
+              className="w-full h-full rounded-lg"
+            />
           </div>
         </div>
 
-        <div className=" rounded-xl overflow-hidden row-start-1 col-start-2 ">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt="picture image"
-            className="w-full h-full rounded-lg"
-          />
-        </div>
-
-        <div className="w-full flex flex-row items-center justify-around gap-3 p-0 rounded-md max-w-full flex-wrap bg-[rgba(255,255,255,.5)] mt-6 row-start-2 col-start-1 col-span-2 ">
+        <div className=" w-full flex items-center justify-around gap-3 p-0 rounded-md flex-wrap bg-[rgba(255,255,255,.5)] mt-6 row-start-2 col-start-1 col-span-2 ">
           {movie.production_companies.map((company) => (
             <div key={company.id} className="flex flex-col items-center">
               <img
@@ -129,13 +131,13 @@ export default function MoviePage({ movie, trailer, director }) {
             </div>
           ))}
         </div>
+        <TrailerModal
+          setShowModal={setShowModal}
+          showModal={showModal}
+          trailerKey={trailer && trailer[0] ? trailer[0].key : alter}
+          name={trailer && trailer[0] ? trailer[0].name : "Default Name"}
+        />
       </div>
-      <TrailerModal
-        setShowModal={setShowModal}
-        showModal={showModal}
-        trailerKey={trailer && trailer[0] ? trailer[0].key : alter}
-        name={trailer && trailer[0] ? trailer[0].name : "Default Name"}
-      />
     </div>
   )
 }

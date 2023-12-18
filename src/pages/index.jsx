@@ -8,8 +8,14 @@ import TrailerModal from "@/components/moviepage/TrailerModal"
 import ActorsIndex from "@/components/Index/ActorsIndex"
 import TvIndex from "@/components/Index/TvIndex.jsx"
 import MoviesIndex from "@/components/Index/MoviesIndex"
+import Footer from "@/components/Footer/Footer"
 
-export default function Home({ trendingMovies, topRated, people, series }) {
+export default function Home({
+  trendingMovies = [],
+  topRated = [],
+  people = [],
+  series = [],
+}) {
   console.log("people", people)
   const carouselContainer = {
     width: "99%",
@@ -24,46 +30,49 @@ export default function Home({ trendingMovies, topRated, people, series }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   return (
-    <main
-      className={` flex min-h-screen flex-col w-full bg-DarkWhite dark:bg-black text-black dark:text-white `}
-    >
-      <Carousel
-        className=""
-        cols={1}
-        rows={1}
-        gap={10}
-        dotColorActive="#F8B319"
-        autoPlay
-        loop
-        hideArrow
-        showDots
-        containerStyle={carouselContainer}
-        viewport={(viewport) => {
-          return window.innerWidth < 768 ? 1 : Math.ceil(viewport.width / 300)
-        }}
-        currentIndex={selectedIndex} // Set the currentIndex based on the selected index
+    <>
+      <main
+        className={` flex min-h-screen overflow-hidden flex-col w-full bg-DarkWhite dark:bg-black text-black dark:text-white `}
       >
-        {trendingMovies.map((movie, index) => (
-          <Carousel.Item key={movie.id}>
-            <CarouselMovie movie={movie} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      <MoviesIndex movies={topRated} />
-      <TvIndex series={series} />
-      <ActorsIndex people={people} />
-    </main>
+        <Carousel
+          className="overflow-hidden"
+          cols={1}
+          rows={1}
+          gap={10}
+          dotColorActive="#F8B319"
+          autoPlay
+          loop
+          hideArrow
+          showDots
+          containerStyle={carouselContainer}
+          viewport={(viewport) => {
+            return window.innerWidth < 768 ? 1 : Math.ceil(viewport.width / 300)
+          }}
+          currentIndex={selectedIndex} // Set the currentIndex based on the selected index
+        >
+          {trendingMovies.map((movie, index) => (
+            <Carousel.Item key={movie.id}>
+              <CarouselMovie movie={movie} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        <MoviesIndex movies={topRated} />
+        <TvIndex series={series} />
+        <ActorsIndex people={people} />
+      </main>
+      <Footer />
+    </>
   )
 }
 
 export async function getServerSideProps() {
-  const Data = await fetcher("trending/movie/day")
-  const trendingMovies = Data.results.slice(0, 3)
-  const topRated = Data.results.slice(0, 4)
+  const Data = (await fetcher("trending/movie/day")) || null
+  const trendingMovies = Data?.results?.slice(0, 3)
+  const topRated = Data?.results?.slice(0, 4)
   const peopleData = await fetcher("person/popular")
-  const people = peopleData.results.slice(0, 4)
+  const people = peopleData?.results?.slice(0, 4)
   const tv = await fetcher("tv/airing_today")
-  const series = tv.results.slice(0, 4)
+  const series = tv?.results?.slice(0, 4)
   return {
     props: { trendingMovies, topRated, people, series },
   }

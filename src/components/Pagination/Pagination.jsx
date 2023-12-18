@@ -31,7 +31,7 @@ const Pagination = ({ totalItems, itemsPerPage }) => {
     <>
       <div className="flex flex-wrap gap-6">
         {totalItems.map((movie, index) => (
-          <div key={index} className="">
+          <div key={index} className="mx-auto">
             {console.log("lovie", movie)}
             <MovieCard
               genres={movie.genre_ids}

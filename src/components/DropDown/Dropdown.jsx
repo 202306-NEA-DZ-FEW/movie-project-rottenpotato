@@ -31,12 +31,12 @@ export default function Dropdown({ title, data, page, theme }) {
       <button
         ref={buttonRef}
         onClick={() => setShowDropdown((showDropdown) => !showDropdown)}
-        className="t focus:outline-none  focus:ring-blue-300 font-normal rounded-lg   py-2 text-center inline-flex items-center text-gray-800 dark:text-white"
+        className="text-sm sm:text-lg focus:outline-none  focus:ring-blue-300 font-normal rounded-lg   py-2 text-center inline-flex items-center text-gray-800 dark:text-white"
         type="button"
       >
         {title}{" "}
         <BsCaretDownSquareFill
-          className={`w-4 h-4 ml-2 mt-2 ${theme ? "rotate-180" : ""}`}
+          className={`w-4 h-4 ml-2  ${theme ? "rotate-180" : ""}`}
         />
       </button>
       {/* <!-- Dropdown menu --> */}

@@ -20,6 +20,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: white;
+  overflow-x: hidden;
 }
 
 .movie-card:hover .bg-overlay {

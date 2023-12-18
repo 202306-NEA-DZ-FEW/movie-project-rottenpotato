@@ -10,7 +10,7 @@ const ActorsIndex = ({ series }) => {
         Airing Today:
       </h1>
       <hr className="border-YellowPotato border-t-2 w-11/12 ml-2 mb-8" />
-      <div className="w-full overflow-hidden flex-col flex-wrap md:grid grid-cols-2 lg:flex-row lg:flex">
+      <div className="w-fit mx-auto overflow-hidden flex-col flex-wrap md:grid grid-cols-2 lg:flex-row lg:flex">
         {series.map((movie, index) => (
           <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
             <MovieCard

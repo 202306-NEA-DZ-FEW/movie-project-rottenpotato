@@ -32,9 +32,9 @@ const NavBar = () => {
 
   return (
     <nav className="bg-OrangeWhite dark:bg-Licorice text-gray-800 dark:text-white p-2 h-auto rounded-l ">
-      <div className="my-2 flex w-full justify-between align-baseline">
+      <div className="my-2 flex flex-col md:flex-row items-center w-full justify-between align-baseline px-12">
         <Link href="/" passHref className="">
-          <div className="logo flex ml-12">
+          <div className="logo flex ">
             <Image src={logo} width={48} height={48} alt="logo image" />
             <span className="font-lucky text-YellowPotato w-32 text-[2rem] uppercase leading-8 ml-2">
               Rotten Potato
@@ -42,14 +42,14 @@ const NavBar = () => {
           </div>
         </Link>
 
-        <div className="text-2xl flex gap-8 font-normal tracking-wider mt-2">
-          <Link href="/" passHref className="py-2">
+        <div className="text-2xl flex gap-3 md:gap-8 font-normal tracking-wider mt-2 items-center">
+          <Link href="/" passHref className="py-2 text-sm sm:text-lg">
             HOME
           </Link>
           <Dropdown title={"MOVIES"} data={movieLibrary} page={"/movies/"} />
           <Dropdown title={"GENRE"} data={movieGenres} page={"/movies/"} />
           <Dropdown title={"TV"} data={tvGenres} page={"shows/"} />
-          <Link href="/actors" passHref className="py-2">
+          <Link href="/actors" passHref className="py-2 text-sm sm:text-lg">
             ACTORS
           </Link>
         </div>

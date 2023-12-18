@@ -51,18 +51,21 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-OrangeWhite dark:bg-[#0b0b0b] pt-32 h-[225px]">
-      <div className="container mx-auto  px-4 flex-cols md:grid-cols-2 lg:flex lg:flex-rows h-full flex justify-around items-center">
+    <footer className="bg-OrangeWhite dark:bg-[#0b0b0b] pt-20 ">
+      <h2 className="text-xl text-gray-800 dark:text-[#f8b31982] text-center mb-8 font-bold">
+        Contributors
+      </h2>
+      <div className="container mx-auto  px-4 flex-col lg:flex-row  flex justify-around items-center">
         {teamMembers.map((member, index) => (
           <MemberCard key={index} {...member} />
         ))}
       </div>
-      <footer className="bg-OrangeWhite dark:bg-[#0b0b0b] py-8">
+      <div className="bg-LightGray dark:bg-[#0b0b0b] py-8">
         {/* Footer copyright content */}
         <p className="text-gray-800 dark:text-[#f8b31982] text-center mt-24">
           &copy; {new Date().getFullYear()} Rotten Potato. All Rights Reserved.
         </p>
-      </footer>
+      </div>
     </footer>
   )
 }

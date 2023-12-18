@@ -40,8 +40,11 @@ const MovieCard = ({ title, poster_path, vote_average, movie_id, genres }) => {
   }
 
   return (
-    <Link href={movie_id ? `/movies/${movie_id}` : "tvshows"}>
-      <div className="movie-card rounded-lg overflow-hidden shadow-lg w-48 h-72 flex-shrink-0 m-1/4 mr-2 ml-2 mb-2 mt-2 relative transform transition-transform duration-300 ease-in-out hover:scale-105 group">
+    <Link
+      href={movie_id ? `/movies/${movie_id}` : "tvshows"}
+      className="mx-auto"
+    >
+      <div className="movie-card rounded-lg overflow-hidden shadow-lg w-48 h-72 flex-shrink-0 m-1/4 mr-2 ml-2 mb-2 mt-2 relative transform transition-transform duration-300 ease-in-out hover:scale-105 group mx-auto">
         <div className="relative w-full h-full">
           <img src="../images/default_Rotten_potato.jpg" alt="" />
           <div

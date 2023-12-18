@@ -7,6 +7,8 @@ import Head from "next/head"
 import Footer from "../components/Footer/Footer"
 import "@/styles/globals.css"
 import DarkModeToggle from "@/components/DarkMode/DarkModeToggle"
+import MobileNavBar from "@/components/NavBar/MobileNavBar"
+import DarkModeToggleMobile from "@/components/DarkMode/DarkModeToggleMobile"
 // import url'https://fonts.googleapis.com/css2?family=Amiri&family=Caprasimo&family=Jomhuria&family=Open+Sans:wght@300&display=swap';
 
 function MyApp({ Component, pageProps }) {
@@ -26,6 +28,8 @@ function MyApp({ Component, pageProps }) {
           <title>Rotten Potato</title>
         </Head>
         <NavBar />
+        <MobileNavBar />
+        <DarkModeToggleMobile />
         <div className=" flex flex-row-reverse justify-end bg-DarkWhite dark:bg-black">
           <div className="w-3/4 grow ">
             <Component {...pageProps} />
@@ -34,7 +38,6 @@ function MyApp({ Component, pageProps }) {
             <SideBar fullSideBar={fullSideBar} />
           </div>
         </div>
-        <Footer />
       </div>
     </ThemeProvider>
   )

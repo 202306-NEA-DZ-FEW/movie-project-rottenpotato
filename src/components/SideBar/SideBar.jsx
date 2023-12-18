@@ -46,8 +46,8 @@ export default function SideBar({ fullSideBar }) {
   return (
     <div
       className={`${
-        isFull ? "w-64" : "w-32"
-      } transition-all duration-300 ease-out z-30`}
+        isFull ? "sm:w-64" : "sm:w-32"
+      } hidden sm:inline-flex transition-all duration-300 ease-out z-30`}
     >
       <div className="container pl-16  ">
         <div
@@ -56,7 +56,7 @@ export default function SideBar({ fullSideBar }) {
           } mb-8 ${fullSideBar ? "hidden" : ""}`}
           onClick={() => setIsFull(!isFull)}
         >
-          <div class="space-y-2 ">
+          <div class="space-y-2 hidden sm:block">
             <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400 mt-2"></div>
             <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400 mt-2"></div>
             <div class="w-7 h-0.5 bg-gray-800 dark:bg-gray-400 mt-2"></div>
@@ -113,27 +113,6 @@ export default function SideBar({ fullSideBar }) {
               ))}
             </ul>
           </div>
-          {/* Settings section */}
-          {/* <div className="nav-items mt-14">
-            <h3
-              className={`${
-                !isFull ? "invisible" : ""
-              } "text-lg mb-4 text-gray-300"`}
-            >
-              Settings
-            </h3>
-            <ul className="flex flex-col">
-              {menuNavigationList.slice(0, 2).map((navItem) => (
-                <SideBarNavItem
-                  {...navItem}
-                  key={navItem.id}
-                  currentLink={"currentLink"}
-                  setCurrentLink={setCurrentLink}
-                  isFull={isFull}
-                />
-              ))}
-            </ul>
-          </div> */}
         </div>
       </div>
     </div>

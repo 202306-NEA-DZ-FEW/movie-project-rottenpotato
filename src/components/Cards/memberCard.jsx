@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const MemberCard = ({ name, githubLink, linkedinLink, imageSrc }) => {
   return (
-    <div className="flex flex-col items-center justify-between p-2 w-48 hover:border border-YellowPotato rounded-md hover:yellow-shadow transform hover:scale-105 hover:bg-LightGray">
+    <div className="flex bg-OrangeWhite flex-col items-center justify-between p-2 w-48  rounded-md   ">
       <div className=" text-lg font-semibold text-center">
         <Image
           src={imageSrc}
